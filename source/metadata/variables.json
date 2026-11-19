@@ -1,0 +1,3896 @@
+[
+  {
+    "name": "prototype",
+    "instance_type": "Self",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "@@array@@",
+    "instance_type": "Self",
+    "var_id": 1,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "argument_count",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 147
+  },
+  {
+    "name": "argument",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 244
+  },
+  {
+    "name": "id",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 57
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 5
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_max_iters",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "timers",
+    "instance_type": "Self",
+    "var_id": 2,
+    "occurrences": 32
+  },
+  {
+    "name": "undefined",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 8
+  },
+  {
+    "name": "_timer",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 6
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 3
+  },
+  {
+    "name": "_time",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 4
+  },
+  {
+    "name": "_dir",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 4
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_count",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 4
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 5
+  },
+  {
+    "name": "active_timers",
+    "instance_type": "Self",
+    "var_id": 3,
+    "occurrences": 120
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 6
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 3
+  },
+  {
+    "name": "_time",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_dir",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_found",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 4
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 4
+  },
+  {
+    "name": "_active_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_iter",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 8
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_iteration",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 3
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 8
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 4
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_max_iters",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 6
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 3
+  },
+  {
+    "name": "_time",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 4
+  },
+  {
+    "name": "_dir",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 4
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_count",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 4
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 6
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 3
+  },
+  {
+    "name": "_time",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_dir",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_found",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 4
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 4
+  },
+  {
+    "name": "_active_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_iter",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 8
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_iteration",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 4
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 8
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_obj",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_obj",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 14
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 22
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 7
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 13
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 8
+  },
+  {
+    "name": "_timer_time_start",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 8
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 12
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 6
+  },
+  {
+    "name": "_timer_iteration",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 11
+  },
+  {
+    "name": "_timer_speed",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_endaction",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_mod",
+    "instance_type": "Local",
+    "var_id": 13,
+    "occurrences": 3
+  },
+  {
+    "name": "_max_iterations",
+    "instance_type": "Local",
+    "var_id": 14,
+    "occurrences": 3
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 15,
+    "occurrences": 7
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 16,
+    "occurrences": 4
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 17,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 18,
+    "occurrences": 5
+  },
+  {
+    "name": "_new_dir",
+    "instance_type": "Local",
+    "var_id": 19,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 20,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_obj",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_dir",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_start",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_active",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_iter",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_list",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 3
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 3
+  },
+  {
+    "name": "_timer_data",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_iter",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_timer_index",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_dir",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_iter",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_start",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_iter",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "_iter",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_all",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 6
+  },
+  {
+    "name": "_active_timer_time",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_dir",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_data",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "_active_timer_active",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_start_time",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "_active_timer_index",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_end",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "_owner",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "_index",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "_exec_dir",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "_data",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 7
+  },
+  {
+    "name": "_speed",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "_endaction",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 2
+  },
+  {
+    "name": "_script",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 2
+  },
+  {
+    "name": "_modulo",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 2
+  },
+  {
+    "name": "_instances",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 2
+  },
+  {
+    "name": "_iterations",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "hsp",
+    "instance_type": "Self",
+    "var_id": 4,
+    "occurrences": 32
+  },
+  {
+    "name": "vsp",
+    "instance_type": "Self",
+    "var_id": 5,
+    "occurrences": 47
+  },
+  {
+    "name": "grv",
+    "instance_type": "Self",
+    "var_id": 6,
+    "occurrences": 8
+  },
+  {
+    "name": "walksp",
+    "instance_type": "Self",
+    "var_id": 7,
+    "occurrences": 8
+  },
+  {
+    "name": "isDeath",
+    "instance_type": "Self",
+    "var_id": 8,
+    "occurrences": 5
+  },
+  {
+    "name": "partSystem",
+    "instance_type": "Global",
+    "var_id": 9,
+    "occurrences": 3
+  },
+  {
+    "name": "partDS",
+    "instance_type": "Global",
+    "var_id": 10,
+    "occurrences": 8
+  },
+  {
+    "name": "room",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 20
+  },
+  {
+    "name": "sprite_index",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 9
+  },
+  {
+    "name": "alarm",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 15
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "key_left",
+    "instance_type": "Self",
+    "var_id": 11,
+    "occurrences": 8
+  },
+  {
+    "name": "key_right",
+    "instance_type": "Self",
+    "var_id": 12,
+    "occurrences": 8
+  },
+  {
+    "name": "key_jump",
+    "instance_type": "Self",
+    "var_id": 13,
+    "occurrences": 7
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "y",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 46
+  },
+  {
+    "name": "x",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 46
+  },
+  {
+    "name": "hard",
+    "instance_type": "Global",
+    "var_id": 14,
+    "occurrences": 8
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "isDeath1",
+    "instance_type": "Self",
+    "var_id": 15,
+    "occurrences": 3
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "isDeath2",
+    "instance_type": "Self",
+    "var_id": 16,
+    "occurrences": 3
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "teamplay",
+    "instance_type": "Self",
+    "var_id": 17,
+    "occurrences": 13
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "vis",
+    "instance_type": "Self",
+    "var_id": 18,
+    "occurrences": 2
+  },
+  {
+    "name": "visible",
+    "instance_type": "Self",
+    "var_id": -6,
+    "occurrences": 1
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "sound",
+    "instance_type": "Self",
+    "var_id": 19,
+    "occurrences": 5
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 2
+  },
+  {
+    "name": "arguments",
+    "instance_type": "Local",
+    "var_id": 0,
+    "occurrences": 0
+  }
+]

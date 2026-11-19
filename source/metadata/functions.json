@@ -1,0 +1,242 @@
+[
+  {
+    "name": "string",
+    "classification": "None",
+    "occurrences": 32
+  },
+  {
+    "name": "ds_map_exists",
+    "classification": "None",
+    "occurrences": 2
+  },
+  {
+    "name": "show_debug_message",
+    "classification": "None",
+    "occurrences": 2
+  },
+  {
+    "name": "abs",
+    "classification": "None",
+    "occurrences": 3
+  },
+  {
+    "name": "@@NewGMLArray@@",
+    "classification": "None",
+    "occurrences": 40
+  },
+  {
+    "name": "ds_map_set",
+    "classification": "None",
+    "occurrences": 9
+  },
+  {
+    "name": "ds_map_find_value",
+    "classification": "None",
+    "occurrences": 16
+  },
+  {
+    "name": "ds_list_size",
+    "classification": "None",
+    "occurrences": 48
+  },
+  {
+    "name": "ds_list_find_value",
+    "classification": "None",
+    "occurrences": 39
+  },
+  {
+    "name": "ds_list_add",
+    "classification": "None",
+    "occurrences": 12
+  },
+  {
+    "name": "ds_list_set",
+    "classification": "None",
+    "occurrences": 7
+  },
+  {
+    "name": "timer_start_ext",
+    "classification": "None",
+    "occurrences": 2
+  },
+  {
+    "name": "ds_list_replace",
+    "classification": "None",
+    "occurrences": 20
+  },
+  {
+    "name": "ds_list_delete",
+    "classification": "None",
+    "occurrences": 8
+  },
+  {
+    "name": "ds_map_delete",
+    "classification": "None",
+    "occurrences": 3
+  },
+  {
+    "name": "ds_map_create",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "ds_list_create",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "script_exists",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "script_execute",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "instance_exists",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "floor",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "ds_map_destroy",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "ds_list_destroy",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_system_create",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_system_depth",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_create",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_life",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_shape",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_size",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_speed",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_gravity",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "part_type_color_mix",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "audio_play_sound",
+    "classification": "None",
+    "occurrences": 18
+  },
+  {
+    "name": "audio_stop_sound",
+    "classification": "None",
+    "occurrences": 25
+  },
+  {
+    "name": "keyboard_check",
+    "classification": "None",
+    "occurrences": 14
+  },
+  {
+    "name": "keyboard_check_pressed",
+    "classification": "None",
+    "occurrences": 4
+  },
+  {
+    "name": "place_meeting",
+    "classification": "None",
+    "occurrences": 27
+  },
+  {
+    "name": "sign",
+    "classification": "None",
+    "occurrences": 20
+  },
+  {
+    "name": "room_restart",
+    "classification": "None",
+    "occurrences": 3
+  },
+  {
+    "name": "room_goto",
+    "classification": "None",
+    "occurrences": 19
+  },
+  {
+    "name": "variable_global_set",
+    "classification": "None",
+    "occurrences": 2
+  },
+  {
+    "name": "part_particles_create",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "alarm_get",
+    "classification": "None",
+    "occurrences": 3
+  },
+  {
+    "name": "game_end",
+    "classification": "None",
+    "occurrences": 4
+  },
+  {
+    "name": "room_goto_next",
+    "classification": "None",
+    "occurrences": 6
+  },
+  {
+    "name": "event_inherited",
+    "classification": "None",
+    "occurrences": 42
+  },
+  {
+    "name": "instance_destroy",
+    "classification": "None",
+    "occurrences": 2
+  },
+  {
+    "name": "object_get_sprite",
+    "classification": "None",
+    "occurrences": 2
+  }
+]

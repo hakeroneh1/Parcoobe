@@ -1,0 +1,68 @@
+[
+  {
+    "name": "music_1",
+    "type": null,
+    "file": "music_1.ogg",
+    "flags": "Regular",
+    "volume": 0.65,
+    "pitch": 0.0,
+    "preload": true,
+    "embedded_audio_size": 0,
+    "exported_file": null
+  },
+  {
+    "name": "music_2",
+    "type": null,
+    "file": "music_2.ogg",
+    "flags": "Regular",
+    "volume": 1.0,
+    "pitch": 0.0,
+    "preload": true,
+    "embedded_audio_size": 0,
+    "exported_file": null
+  },
+  {
+    "name": "music_3",
+    "type": null,
+    "file": "music_3.ogg",
+    "flags": "Regular",
+    "volume": 1.0,
+    "pitch": 0.0,
+    "preload": true,
+    "embedded_audio_size": 0,
+    "exported_file": null
+  },
+  {
+    "name": "music_4",
+    "type": null,
+    "file": "music_4.ogg",
+    "flags": "Regular",
+    "volume": 0.62,
+    "pitch": 0.0,
+    "preload": true,
+    "embedded_audio_size": 0,
+    "exported_file": null
+  },
+  {
+    "name": "mDamage",
+    "type": null,
+    "file": "mDamage",
+    "flags": "IsCompressed, Regular",
+    "volume": 1.0,
+    "pitch": 0.0,
+    "preload": true,
+    "embedded_audio_size": 11816,
+    "exported_file": "sounds/mDamage.ogg"
+  },
+  {
+    "name": "mJump",
+    "type": null,
+    "file": "mJump",
+    "flags": "IsCompressed, Regular",
+    "volume": 1.0,
+    "pitch": 0.0,
+    "preload": true,
+    "embedded_audio_size": 12770,
+    "exported_file": "sounds/mJump.ogg"
+  }
+]

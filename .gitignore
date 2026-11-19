@@ -1,0 +1,16 @@
+# рабочие каталоги декомпиляции (не нужны в репозитории)
+dump/
+_dump/
+orig/
+export/
+*.rar
+*.bin
+
+# сборка .NET
+bin/
+obj/
+*.user
+
+# python
+__pycache__/
+*.pyc

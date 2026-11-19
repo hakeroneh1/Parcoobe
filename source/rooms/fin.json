@@ -1,0 +1,49 @@
+{
+  "name": "fin",
+  "caption": null,
+  "width": 1280,
+  "height": 760,
+  "speed": 0,
+  "persistent": false,
+  "background_color": 4278190080,
+  "draw_background_color": false,
+  "creation_code": null,
+  "instances": [
+    {
+      "object": "oBack",
+      "layer": "Instances",
+      "x": 16,
+      "y": 672,
+      "scale_x": 1.0,
+      "scale_y": 1.0,
+      "rotation": 0.0,
+      "color": 4294967295,
+      "instance_id": 102591,
+      "creation_code": null
+    }
+  ],
+  "instance_count": 1,
+  "tile_count": 0,
+  "layers": [
+    {
+      "name": "Instances",
+      "type": "Instances",
+      "depth": 0,
+      "visible": true,
+      "instance_count": 1
+    },
+    {
+      "name": "Assets_1",
+      "type": "Assets",
+      "depth": 100,
+      "visible": true
+    },
+    {
+      "name": "Background",
+      "type": "Background",
+      "depth": 200,
+      "visible": true,
+      "background": null
+    }
+  ]
+}

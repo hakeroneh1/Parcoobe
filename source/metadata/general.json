@@ -1,0 +1,43 @@
+{
+  "project_name": "PARCOOBE",
+  "file_name": "PARCOOBE",
+  "config": "default",
+  "game_maker_2": true,
+  "bytecode_version": 17,
+  "runtime": "2.2.2.302",
+  "window_width": 1280,
+  "window_height": 720,
+  "counts": {
+    "objects": 42,
+    "sprites": 50,
+    "sounds": 6,
+    "rooms": 20,
+    "scripts": 57,
+    "fonts": 1,
+    "paths": 1,
+    "code": 148,
+    "strings": 1241
+  },
+  "room_order": [
+    "Menu",
+    "lvl_choose",
+    "skins",
+    "chapter_1",
+    "lvl_1",
+    "lvl_2",
+    "lvl_3",
+    "lvl_4",
+    "lvl_5",
+    "chapter_2",
+    "lvl_6",
+    "lvl_7",
+    "lvl_8",
+    "fin",
+    "finwtf",
+    "p_2_lvl_1",
+    "p_2_lvl_2",
+    "p_2_lvl_3",
+    "p_2_lvl_4",
+    "p_2_lvl_5"
+  ]
+}

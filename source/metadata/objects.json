@@ -1,0 +1,1161 @@
+[
+  {
+    "name": "oPlayer",
+    "sprite": "sPlayerright",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": true,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_Step_0"
+        ]
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 8,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_6d1efe77_b359_4bce_920b_b0511e55783a"
+        ],
+        "collision_with": "oDoor"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 4,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_974ad470_dbfa_4a08_981b_ba45a9a26157"
+        ],
+        "collision_with": "oDanger"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 3,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_a75115f8_9e8f_46bc_bea3_e0e7b72f827b"
+        ],
+        "collision_with": "oWall"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 10,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_1489019b_930a_4929_a863_a5aedfdd6f53"
+        ],
+        "collision_with": "oDoorlevelselect"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 11,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_700d3946_59db_4c32_9026_1a2eeaad7496"
+        ],
+        "collision_with": "oDoor2player"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 12,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_5cd5cb20_4a42_4288_a561_aee60c81aaff"
+        ],
+        "collision_with": "oDoorSkins"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 41,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_e70afac4_b3e4_425e_8d51_d14e0da22b15"
+        ],
+        "collision_with": "oMushroomBleb"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 9,
+        "code_entries": [
+          "gml_Object_oPlayer_Collision_0dd4ed69_01bd_4dc8_a8d9_fe74ad8bb6d6"
+        ],
+        "collision_with": "oDoorHard"
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oPlayer_1",
+    "sprite": "sPlayerright",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": true,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_1_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_1_Step_0"
+        ]
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 8,
+        "code_entries": [
+          "gml_Object_oPlayer_1_Collision_6d1efe77_b359_4bce_920b_b0511e55783a"
+        ],
+        "collision_with": "oDoor"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 4,
+        "code_entries": [
+          "gml_Object_oPlayer_1_Collision_974ad470_dbfa_4a08_981b_ba45a9a26157"
+        ],
+        "collision_with": "oDanger"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 3,
+        "code_entries": [
+          "gml_Object_oPlayer_1_Collision_a75115f8_9e8f_46bc_bea3_e0e7b72f827b"
+        ],
+        "collision_with": "oWall"
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_1_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oPlayer_2",
+    "sprite": "s2Playerleft",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": true,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_2_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_2_Step_0"
+        ]
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 8,
+        "code_entries": [
+          "gml_Object_oPlayer_2_Collision_6d1efe77_b359_4bce_920b_b0511e55783a"
+        ],
+        "collision_with": "oDoor"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 4,
+        "code_entries": [
+          "gml_Object_oPlayer_2_Collision_974ad470_dbfa_4a08_981b_ba45a9a26157"
+        ],
+        "collision_with": "oDanger"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 3,
+        "code_entries": [
+          "gml_Object_oPlayer_2_Collision_a75115f8_9e8f_46bc_bea3_e0e7b72f827b"
+        ],
+        "collision_with": "oWall"
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oPlayer_2_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oWall",
+    "sprite": "sWall",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oWall_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oDanger",
+    "sprite": "sDanger",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDanger_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oJumpplatform",
+    "sprite": "sJumpplatform",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oJumpplatform_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oNewgame",
+    "sprite": "sNewgame",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNewgame_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oName",
+    "sprite": "sName",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oName_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oDoor",
+    "sprite": "sDoor",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoor_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoor_Step_0"
+        ]
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 1,
+        "code_entries": [
+          "gml_Object_oDoor_Collision_91fd51b2_9b2f_4581_855d_c8f114155bb6"
+        ],
+        "collision_with": "oPlayer_1"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 2,
+        "code_entries": [
+          "gml_Object_oDoor_Collision_f1e2f17f_2dab_4b6d_83a4_8b9646e02264"
+        ],
+        "collision_with": "oPlayer_2"
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoor_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oDoorHard",
+    "sprite": "sDoor",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoorHard_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoorHard_Step_0"
+        ]
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 1,
+        "code_entries": [
+          "gml_Object_oDoorHard_Collision_91fd51b2_9b2f_4581_855d_c8f114155bb6"
+        ],
+        "collision_with": "oPlayer_1"
+      },
+      {
+        "event_type": "Collision",
+        "event_subtype": 2,
+        "code_entries": [
+          "gml_Object_oDoorHard_Collision_f1e2f17f_2dab_4b6d_83a4_8b9646e02264"
+        ],
+        "collision_with": "oPlayer_2"
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoorHard_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oDoorlevelselect",
+    "sprite": "sDoor",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoorlevelselect_Step_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoorlevelselect_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oDoor2player",
+    "sprite": "sDoor",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoor2player_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oDoorSkins",
+    "sprite": "sDoor",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oDoorSkins_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oClosedoor",
+    "sprite": "sClosedoor",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oClosedoor_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oTextlevelselect",
+    "sprite": "sLevelselect",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oTextlevelselect_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oLevel_1",
+    "sprite": "sLvl_1",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_1_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_1_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oLevel_2",
+    "sprite": "sLvl_2",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_2_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_2_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oLevel_3",
+    "sprite": "sLvl_3",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_3_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_3_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oLevel_4",
+    "sprite": "sLvl_4",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_4_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_4_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oLevel_5",
+    "sprite": "sLvl_5",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_5_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oLevel_5_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oP_2_Level_1",
+    "sprite": "sP_2_Lvl_1",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_1_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_1_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oP_2_Level_2",
+    "sprite": "sP_2_Lvl_2",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_2_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_2_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oP_2_Level_3",
+    "sprite": "sP_2_Lvl_3",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_3_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_3_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oP_2_Level_4",
+    "sprite": "sP_2_Lvl_4",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_4_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_4_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oP_2_Level_5",
+    "sprite": "sP_2_Lvl_5",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_5_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oP_2_Level_5_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oBack",
+    "sprite": "sBack",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oBack_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oBack_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oExitbutton",
+    "sprite": "sExitbutton",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oExitbutton_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oExitbutton_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "o2player",
+    "sprite": "s2player",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_o2player_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oNext",
+    "sprite": "sNext",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNext_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNext_Step_0"
+        ]
+      },
+      {
+        "event_type": "Mouse",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNext_Mouse_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNext_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oButtonRight",
+    "sprite": "sButtonRight",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oButtonRight_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oButtonLeft",
+    "sprite": "sButtonleft",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oButtonLeft_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oSpace_1",
+    "sprite": "sSpace_1",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSpace_1_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oSpace_2",
+    "sprite": "sSpace_2",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSpace_2_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oSpace_3",
+    "sprite": "sSpace_3",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSpace_3_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oButtonA",
+    "sprite": "sButtonA",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oButtonA_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oButtonD",
+    "sprite": "sButtonD",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oButtonD_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oNum0",
+    "sprite": "sNum0_1",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNum0_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oNum0_1",
+    "sprite": "sNum0_2",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oNum0_1_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oSkinChanger",
+    "sprite": null,
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSkinChanger_Create_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSkinChanger_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oSound_button",
+    "sprite": "sSound_on",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSound_button_Create_0"
+        ]
+      },
+      {
+        "event_type": "Mouse",
+        "event_subtype": 4,
+        "code_entries": [
+          "gml_Object_oSound_button_Mouse_4"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oSound_button_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oBackgroundMushroom",
+    "sprite": "sDanger_brick",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oBackgroundMushroom_PreCreate_0"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "oMushroomBleb",
+    "sprite": "sMushroomZomb",
+    "parent": null,
+    "visible": true,
+    "solid": false,
+    "persistent": false,
+    "depth": 0,
+    "physics": false,
+    "events": [
+      {
+        "event_type": "Create",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oMushroomBleb_Create_0"
+        ]
+      },
+      {
+        "event_type": "Step",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oMushroomBleb_Step_0"
+        ]
+      },
+      {
+        "event_type": "PreCreate",
+        "event_subtype": 0,
+        "code_entries": [
+          "gml_Object_oMushroomBleb_PreCreate_0"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "font_pix",
+    "display_name": "Stay Pixel",
+    "em_size": 12.0,
+    "bold": false,
+    "italic": false,
+    "range_start": 32,
+    "range_end": 9647,
+    "glyph_count": 189
+  }
+]

@@ -1,0 +1,12 @@
+var _owner = (argument_count == 3) ? argument[0] : id;
+var _index = (argument_count == 3) ? argument[1] : argument[0];
+var _script = (argument_count == 3) ? argument[2] : argument[1];
+var _data = ds_map_find_value(_owner.timers, string(_index));
+var _speed = _data[2];
+var _endaction = _data[4];
+var _modulo = _data[5];
+var _instances = _data[6];
+var _iterations = _data[7];
+var _exec_dir = _data[8];
+ds_map_set(_owner.timers, string(_index), [_owner, _index, _speed, _script, _endaction, _modulo, _instances, _iterations, _exec_dir]);
+return 1;
