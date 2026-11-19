@@ -11,6 +11,7 @@
   * `scripts/export_source.csx` — выгружает комнаты и метаданные (объекты, спрайты, звуки, шрифты,
     пути, переменные, функции, текстурные страницы) в JSON/PNG-проект;
   * `scripts/rename_to_parcoobe.csx` — переименование игры `Parcoob` → `Parcoobe` прямо в `data.win`;
+  * `scripts/rebuild_logo.py` — перерисовка титульного логотипа `PARCOOB` → `PARCOOBE` (Pillow + Bebas Neue);
   * `scripts/render_room.py` — рендер PNG-превью комнаты из выгруженных данных (Pillow).
 
 ## Сборка
@@ -42,6 +43,11 @@ EXPORT_ROOT=/tmp/source ./run.sh load ../original/data.win --scripts scripts/exp
 ./run.sh load ../original/data.win \
     --scripts scripts/rename_to_parcoobe.csx \
     --output ../build/data.win --overwrite
+
+# перерисовать логотип и вклеить его в текстурную страницу
+python3 scripts/rebuild_logo.py --source <выгрузка спрайтов/текстур> --out /tmp/logo
+../run.sh replace ../build/data.win --textures "Texture 0=/tmp/logo/texture0.png" \
+    --output ../build/data.win
 ```
 
 ## Как это было сделано для Parcoobe (по шагам)
@@ -54,7 +60,9 @@ EXPORT_ROOT=/tmp/source ./run.sh load ../original/data.win --scripts scripts/exp
 6. `./run.sh dump ... --sprites -t -s` — PNG спрайтов и текстурных страниц, `strings.txt`.
 7. `./run.sh load ../original/data.win --scripts scripts/rename_to_parcoobe.csx --output ../build/data.win --overwrite`
    — новый `data.win` с именем `Parcoobe`.
-8. Готовые GML разложены по `objects/<объект>/<событие>.gml` и `scripts/<скрипт>.gml`
+8. `python3 scripts/rebuild_logo.py` + `./run.sh replace ... --textures "Texture 0=texture0.png"` — новый
+   титульный логотип `PARCOOBE` в текстурной странице.
+9. Готовые GML разложены по `objects/<объект>/<событие>.gml` и `scripts/<скрипт>.gml`
    (события коллизий переименованы из GUID в `Collision_with_<объект>.gml` по данным `metadata/objects.json`).
 
 ## Ограничения

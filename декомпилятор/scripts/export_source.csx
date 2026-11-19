@@ -324,9 +324,13 @@ var tpis = new List<object>();
 for (int i = 0; i < Data.TexturePageItems.Count; i++)
 {
     var tpi = Data.TexturePageItems[i];
+    int pageIndex = -1;
+    for (int t = 0; t < Data.EmbeddedTextures.Count; t++)
+        if (ReferenceEquals(Data.EmbeddedTextures[t], tpi.TexturePage)) { pageIndex = t; break; }
     tpis.Add(new Dictionary<string, object>
     {
         ["index"] = i,
+        ["texture_page"] = pageIndex,
         ["target_x"] = tpi.TargetX,
         ["target_y"] = tpi.TargetY,
         ["source_x"] = tpi.SourceX,
