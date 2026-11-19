@@ -93,7 +93,7 @@ if (global.pco_ui == 1)
     var pco_val = "";
     var pco_col = c_white;
 
-    for (pco_i = 0; pco_i < 9; pco_i++)
+    for (pco_i = 0; pco_i < 10; pco_i++)
     {
         pco_col = c_white;
         if (global.pco_sel == pco_i)
@@ -145,6 +145,11 @@ if (global.pco_ui == 1)
             pco_lbl = "AUTO UPDATE";
             if (global.pco_upd_auto == 1) { pco_val = "ON"; } else { pco_val = "OFF"; }
         }
+        else if (pco_i == 8)
+        {
+            pco_lbl = "CHECK NOW";
+            pco_val = "";
+        }
         else
         {
             pco_lbl = "BACK";
@@ -155,7 +160,7 @@ if (global.pco_ui == 1)
         draw_text_transformed(186, pco_y, pco_lbl, 2.2, 2.2, 0);
         draw_set_colour(make_colour_rgb(230, 230, 230));
         draw_text_transformed(560, pco_y, pco_val, 2.2, 2.2, 0);
-        pco_y += 56;
+        pco_y += 48;
     }
 
     if (global.pco_bind >= 0)
@@ -171,6 +176,18 @@ if (global.pco_ui == 1)
         draw_text_transformed(640, 440, "ESC CANCEL", 1.6, 1.6, 0);
         draw_set_halign(fa_left);
     }
+}
+
+// сообщение о проверке обновления
+if (global.pco_msg_t > 0 && global.pco_msg != "")
+{
+    draw_set_colour(make_colour_rgb(20, 40, 70));
+    draw_rectangle(320, 618, 960, 656, false);
+    draw_set_colour(make_colour_rgb(150, 200, 255));
+    draw_rectangle(320, 618, 960, 656, true);
+    draw_set_halign(fa_center);
+    draw_text_transformed(640, 628, global.pco_msg, 1.5, 1.5, 0);
+    draw_set_halign(fa_left);
 }
 
 // баннер «доступно обновление»

@@ -13,6 +13,20 @@ if (ds_map_exists(async_load, "id"))
             pco_status = ds_map_find_value(async_load, "status");
         }
 
+        var pco_log = file_text_open_write("update.log");
+        file_text_write_string(pco_log, "status=" + string(pco_status));
+        if (ds_map_exists(async_load, "result"))
+        {
+            file_text_write_string(pco_log, " result=" + string(ds_map_find_value(async_load, "result")));
+        }
+        file_text_close(pco_log);
+
+        if (pco_status != 1)
+        {
+            global.pco_msg = "UPDATE CHECK FAILED";
+            global.pco_msg_t = 240;
+        }
+
         if (pco_status == 1 && ds_map_exists(async_load, "result"))
         {
             var pco_s = string(ds_map_find_value(async_load, "result"));
@@ -33,11 +47,14 @@ if (ds_map_exists(async_load, "id"))
             {
                 global.pco_upd = 1;
                 global.pco_upd_ver = pco_s;
+                global.pco_msg = "UPDATE FOUND";
             }
             else
             {
                 global.pco_upd = 0;
+                global.pco_msg = "YOU HAVE THE LATEST VERSION";
             }
+            global.pco_msg_t = 240;
         }
     }
 }

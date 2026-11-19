@@ -71,6 +71,8 @@ if (!variable_global_exists("pco_v"))
     global.pco_req = -1;          // id текущего http-запроса
     global.pco_upd_url = "https://raw.githubusercontent.com/hakeroneh1/Parcoobe/main/version.txt";
     global.pco_upd_page = "https://github.com/hakeroneh1/Parcoobe/releases/latest";
+    global.pco_msg = "";          // сообщение о результате проверки
+    global.pco_msg_t = 0;         // сколько кадров его показывать
 
     // сохранённые настройки
     if (file_exists("parcoobe.ini"))

@@ -290,6 +290,13 @@
         ]
       },
       {
+        "event_type": "Other",
+        "event_subtype": 62,
+        "code_entries": [
+          "gml_Object_oName_Other_62"
+        ]
+      },
+      {
         "event_type": "Draw",
         "event_subtype": 64,
         "code_entries": [

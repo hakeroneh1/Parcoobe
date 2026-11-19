@@ -9,7 +9,8 @@ GML-код, который вставляется в `data.win` при сбор�
 | `03_step_p1.gml` | Step `oPlayer_1` (2 игрока, P1) | то же для игрока 1 |
 | `04_step_p2.gml` | Step `oPlayer_2` (2 игрока, P2) | то же для игрока 2 |
 | `05_menu_step.gml` | Step `oName` (комната Menu) | кнопка MENU, открытие панели по `F1`, навигация, переназначение клавиш, сохранение ini |
-| `06_menu_draw.gml` | Draw GUI `oName` | отрисовка кнопки MENU и панели `CONTROLS` |
+| `06_menu_draw.gml` | Draw GUI `oName` | отрисовка кнопки MENU, панели `CONTROLS`, плашки обновления |
+| `07_async_http.gml` | Other → Async HTTP `oName` | разбор ответа `http_get` для авто-обновления |
 
 Настройки по умолчанию: P1 — `A`/`D`, прыжок `Space` и `W`; P2 — `←`/`→`, прыжок `Numpad 0` и `↑`.
 Геймпад: крестовина/стик, `A` (face one) и правый бампер.

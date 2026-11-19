@@ -99,6 +99,18 @@ if (!variable_global_exists("pco_v"))
     global.pco_snd = 1;       // звук включён
     global.pco_dirty = 0;
 
+    // авто-обновление
+    global.pco_ver = "1.0.2";
+    global.pco_upd_auto = 1;      // проверять обновления при запуске
+    global.pco_upd_checked = 0;   // проверка уже выполнена
+    global.pco_upd = 0;           // найдено обновление
+    global.pco_upd_ver = "";      // версия обновления
+    global.pco_req = -1;          // id текущего http-запроса
+    global.pco_upd_url = "https://raw.githubusercontent.com/hakeroneh1/Parcoobe/main/version.txt";
+    global.pco_upd_page = "https://github.com/hakeroneh1/Parcoobe/releases/latest";
+    global.pco_msg = "";          // сообщение о результате проверки
+    global.pco_msg_t = 0;         // сколько кадров его показывать
+
     // сохранённые настройки
     if (file_exists("parcoobe.ini"))
     {
@@ -112,6 +124,7 @@ if (!variable_global_exists("pco_v"))
         global.pco_dev[1] = ini_read_real("dev", "p1", 0);
         global.pco_dev[2] = ini_read_real("dev", "p2", 0);
         global.pco_snd = ini_read_real("misc", "sound", 1);
+        global.pco_upd_auto = ini_read_real("misc", "update", 1);
         ini_close();
         audio_master_gain(global.pco_snd);
     }

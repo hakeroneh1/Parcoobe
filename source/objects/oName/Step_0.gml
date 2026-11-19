@@ -1,5 +1,5 @@
 // Parcoobe 1.0.1 — меню настроек управления (oName, комната Menu).
-var pco_rows = 8;
+var pco_rows = 10;
 var pco_bx1 = 1120;
 var pco_by1 = 32;
 var pco_bx2 = 1256;
@@ -59,6 +59,26 @@ if (global.pco_ui == 1)
                 global.pco_snd = 1 - global.pco_snd;
                 audio_master_gain(global.pco_snd);
                 global.pco_dirty = 1;
+            }
+            else if (pco_sel == 7)
+            {
+                global.pco_upd_auto = 1 - global.pco_upd_auto;
+                global.pco_dirty = 1;
+                if (global.pco_upd_auto == 1 && global.pco_upd_checked == 0 && global.pco_req < 0)
+                {
+                    global.pco_req = http_get(global.pco_upd_url);
+                }
+            }
+            else if (pco_sel == 8)
+            {
+                // CHECK NOW
+                if (global.pco_req < 0)
+                {
+                    global.pco_upd_checked = 0;
+                    global.pco_msg = "CHECKING";
+                    global.pco_msg_t = 240;
+                    global.pco_req = http_get(global.pco_upd_url);
+                }
             }
             else
             {
@@ -129,4 +149,24 @@ if (global.pco_dirty == 1)
     ini_write_real("misc", "sound", global.pco_snd);
     ini_close();
     global.pco_dirty = 0;
+}
+
+// ── авто-обновление: первый запрос при входе в меню и открытие страницы релизов
+if (global.pco_upd_auto == 1 && global.pco_upd_checked == 0 && global.pco_req < 0)
+{
+    global.pco_req = http_get(global.pco_upd_url);
+}
+if (global.pco_upd == 1 && global.pco_ui == 0 && keyboard_check_pressed(ord("U")))
+{
+    url_open(global.pco_upd_page);
+}
+
+// таймер сообщения
+if (global.pco_msg_t > 0)
+{
+    global.pco_msg_t -= 1;
+    if (global.pco_msg_t == 0)
+    {
+        global.pco_msg = "";
+    }
 }
