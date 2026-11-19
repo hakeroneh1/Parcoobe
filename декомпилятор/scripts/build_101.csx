@@ -28,6 +28,7 @@ void AddEvent(string objName, string codeName, int evType, uint evSubtype)
 
 AddEvent("oName", "gml_Object_oName_Step_0", 3, 0);
 AddEvent("oName", "gml_Object_oName_Draw_64", 8, 64);
+AddEvent("oName", "gml_Object_oName_Other_62", 7, 62);   // Async - HTTP
 
 // 2. Убираем из комнаты Menu старые кнопки: выход (X) и звук — вместо них кнопка MENU.
 var menu = Data.Rooms.ByName("Menu");

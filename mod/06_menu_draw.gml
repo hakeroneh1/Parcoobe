@@ -93,7 +93,7 @@ if (global.pco_ui == 1)
     var pco_val = "";
     var pco_col = c_white;
 
-    for (pco_i = 0; pco_i < 8; pco_i++)
+    for (pco_i = 0; pco_i < 9; pco_i++)
     {
         pco_col = c_white;
         if (global.pco_sel == pco_i)
@@ -140,6 +140,11 @@ if (global.pco_ui == 1)
             pco_lbl = "SOUND";
             if (global.pco_snd == 1) { pco_val = "ON"; } else { pco_val = "OFF"; }
         }
+        else if (pco_i == 7)
+        {
+            pco_lbl = "AUTO UPDATE";
+            if (global.pco_upd_auto == 1) { pco_val = "ON"; } else { pco_val = "OFF"; }
+        }
         else
         {
             pco_lbl = "BACK";
@@ -166,4 +171,17 @@ if (global.pco_ui == 1)
         draw_text_transformed(640, 440, "ESC CANCEL", 1.6, 1.6, 0);
         draw_set_halign(fa_left);
     }
+}
+
+// баннер «доступно обновление»
+if (global.pco_upd == 1 && global.pco_ui == 0)
+{
+    draw_set_colour(make_colour_rgb(20, 60, 20));
+    draw_rectangle(300, 660, 980, 712, false);
+    draw_set_colour(make_colour_rgb(140, 240, 140));
+    draw_rectangle(300, 660, 980, 712, true);
+    draw_set_halign(fa_center);
+    draw_text_transformed(640, 672, "NEW VERSION AVAILABLE", 1.8, 1.8, 0);
+    draw_text_transformed(640, 692, "PRESS U TO DOWNLOAD", 1.4, 1.4, 0);
+    draw_set_halign(fa_left);
 }

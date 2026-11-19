@@ -38,12 +38,27 @@ def run(*args):
     return res.stdout
 
 
+MARKER = "// Parcoobe 1.0.1 — инициализация"
+
+
+def base_create(path):
+    """Create-событие без ранее вставленного блока инициализации."""
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    if MARKER in text:
+        text = text[:text.index(MARKER)]
+    return text.rstrip() + "\n"
+
+
 def concat(dst, *parts):
     with open(dst, "w", encoding="utf-8") as out:
         for p in parts:
-            with open(p, encoding="utf-8") as f:
-                out.write(f.read())
-                out.write("\n")
+            if p.endswith(".gml") and os.path.basename(p).startswith("Create_0"):
+                out.write(base_create(p))
+            else:
+                with open(p, encoding="utf-8") as f:
+                    out.write(f.read())
+            out.write("\n")
     return dst
 
 
@@ -77,6 +92,7 @@ def main():
     run("replace", step_a,
         "--code", "gml_Object_oName_Step_0=" + os.path.join(MOD, "05_menu_step.gml"),
         "--code", "gml_Object_oName_Draw_64=" + os.path.join(MOD, "06_menu_draw.gml"),
+        "--code", "gml_Object_oName_Other_62=" + os.path.join(MOD, "07_async_http.gml"),
         "--code", "gml_Object_oPlayer_Create_0=" + create_single,
         "--code", "gml_Object_oPlayer_Step_0=" + os.path.join(MOD, "02_step_single.gml"),
         "--code", "gml_Object_oPlayer_1_Create_0=" + create_p1,
