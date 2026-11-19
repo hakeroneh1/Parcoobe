@@ -3267,25 +3267,25 @@
     "name": "key_left",
     "instance_type": "Self",
     "var_id": 11,
-    "occurrences": 8
+    "occurrences": 17
   },
   {
     "name": "key_right",
     "instance_type": "Self",
     "var_id": 12,
-    "occurrences": 8
+    "occurrences": 17
   },
   {
     "name": "key_jump",
     "instance_type": "Self",
     "var_id": 13,
-    "occurrences": 7
+    "occurrences": 13
   },
   {
     "name": "move",
     "instance_type": "Local",
     "var_id": 1,
-    "occurrences": 2
+    "occurrences": 0
   },
   {
     "name": "y",
@@ -3381,7 +3381,7 @@
     "name": "move",
     "instance_type": "Local",
     "var_id": 1,
-    "occurrences": 2
+    "occurrences": 0
   },
   {
     "name": "arguments",
@@ -3429,7 +3429,7 @@
     "name": "move",
     "instance_type": "Local",
     "var_id": 1,
-    "occurrences": 2
+    "occurrences": 0
   },
   {
     "name": "arguments",
@@ -3892,5 +3892,371 @@
     "instance_type": "Local",
     "var_id": 0,
     "occurrences": 0
+  },
+  {
+    "name": "pco_ui",
+    "instance_type": "Global",
+    "var_id": 20,
+    "occurrences": 17
+  },
+  {
+    "name": "pco_bind",
+    "instance_type": "Global",
+    "var_id": 21,
+    "occurrences": 15
+  },
+  {
+    "name": "pco_sel",
+    "instance_type": "Global",
+    "var_id": 22,
+    "occurrences": 12
+  },
+  {
+    "name": "pco_player",
+    "instance_type": "Global",
+    "var_id": 23,
+    "occurrences": 12
+  },
+  {
+    "name": "pco_dev",
+    "instance_type": "Global",
+    "var_id": 24,
+    "occurrences": 28
+  },
+  {
+    "name": "pco_dirty",
+    "instance_type": "Global",
+    "var_id": 25,
+    "occurrences": 12
+  },
+  {
+    "name": "pco_snd",
+    "instance_type": "Global",
+    "var_id": 26,
+    "occurrences": 23
+  },
+  {
+    "name": "pco_pad",
+    "instance_type": "Global",
+    "var_id": 27,
+    "occurrences": 76
+  },
+  {
+    "name": "pco_gp",
+    "instance_type": "Global",
+    "var_id": 28,
+    "occurrences": 57
+  },
+  {
+    "name": "pco_kb",
+    "instance_type": "Global",
+    "var_id": 29,
+    "occurrences": 81
+  },
+  {
+    "name": "pco_rows",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 4
+  },
+  {
+    "name": "pco_bx1",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 2
+  },
+  {
+    "name": "pco_by1",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 2
+  },
+  {
+    "name": "pco_bx2",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 2
+  },
+  {
+    "name": "pco_by2",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "pco_mx",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_my",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_sel",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 9
+  },
+  {
+    "name": "pco_p",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 4
+  },
+  {
+    "name": "pco_slot",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_gp",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 2
+  },
+  {
+    "name": "pco_i",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 18
+  },
+  {
+    "name": "pco_w",
+    "instance_type": "Local",
+    "var_id": 13,
+    "occurrences": 8
+  },
+  {
+    "name": "pco_bx1",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 5
+  },
+  {
+    "name": "pco_by1",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 4
+  },
+  {
+    "name": "pco_bx2",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 5
+  },
+  {
+    "name": "pco_by2",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 5
+  },
+  {
+    "name": "pco_p",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 5
+  },
+  {
+    "name": "pco_b",
+    "instance_type": "Local",
+    "var_id": 6,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_names",
+    "instance_type": "Local",
+    "var_id": 7,
+    "occurrences": 6
+  },
+  {
+    "name": "pco_j",
+    "instance_type": "Local",
+    "var_id": 8,
+    "occurrences": 7
+  },
+  {
+    "name": "pco_nm",
+    "instance_type": "Local",
+    "var_id": 9,
+    "occurrences": 32
+  },
+  {
+    "name": "pco_bb",
+    "instance_type": "Local",
+    "var_id": 10,
+    "occurrences": 13
+  },
+  {
+    "name": "pco_kk",
+    "instance_type": "Local",
+    "var_id": 11,
+    "occurrences": 20
+  },
+  {
+    "name": "pco_i",
+    "instance_type": "Local",
+    "var_id": 12,
+    "occurrences": 13
+  },
+  {
+    "name": "pco_y",
+    "instance_type": "Local",
+    "var_id": 13,
+    "occurrences": 7
+  },
+  {
+    "name": "pco_lbl",
+    "instance_type": "Local",
+    "var_id": 14,
+    "occurrences": 10
+  },
+  {
+    "name": "pco_val",
+    "instance_type": "Local",
+    "var_id": 15,
+    "occurrences": 13
+  },
+  {
+    "name": "pco_col",
+    "instance_type": "Local",
+    "var_id": 16,
+    "occurrences": 4
+  },
+  {
+    "name": "pco_v",
+    "instance_type": "Global",
+    "var_id": 30,
+    "occurrences": 6
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 30
+  },
+  {
+    "name": "pco_j",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 20
+  },
+  {
+    "name": "pco_p",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_b",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 9
+  },
+  {
+    "name": "pco_g",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 6
+  },
+  {
+    "name": "pco_ax",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 30
+  },
+  {
+    "name": "pco_j",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 20
+  },
+  {
+    "name": "pco_p",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_b",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 9
+  },
+  {
+    "name": "pco_g",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 6
+  },
+  {
+    "name": "pco_ax",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
+  },
+  {
+    "name": "i",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 30
+  },
+  {
+    "name": "pco_j",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 20
+  },
+  {
+    "name": "pco_p",
+    "instance_type": "Local",
+    "var_id": 1,
+    "occurrences": 3
+  },
+  {
+    "name": "pco_b",
+    "instance_type": "Local",
+    "var_id": 2,
+    "occurrences": 9
+  },
+  {
+    "name": "pco_g",
+    "instance_type": "Local",
+    "var_id": 3,
+    "occurrences": 6
+  },
+  {
+    "name": "pco_ax",
+    "instance_type": "Local",
+    "var_id": 4,
+    "occurrences": 3
+  },
+  {
+    "name": "move",
+    "instance_type": "Local",
+    "var_id": 5,
+    "occurrences": 2
   }
 ]

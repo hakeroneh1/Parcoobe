@@ -1,6 +1,27 @@
-key_left = keyboard_check(ord("A"));
-key_right = keyboard_check(ord("D"));
-key_jump = keyboard_check_pressed(vk_space);
+// Parcoobe 1.0.1 — Step игрока 1 (двухигровой режим).
+var pco_p = 1;
+var pco_b = 0;
+if (global.pco_ui == 1)
+{
+    key_left = 0;
+    key_right = 0;
+    key_jump = 0;
+}
+else if (global.pco_dev[pco_p] == 1)
+{
+    var pco_g = global.pco_pad[pco_p];
+    var pco_ax = gamepad_axis_value(pco_g, gp_axislh);
+    key_left = gamepad_button_check(pco_g, global.pco_gp[pco_b]) || pco_ax < -0.4;
+    key_right = gamepad_button_check(pco_g, global.pco_gp[pco_b + 1]) || pco_ax > 0.4;
+    key_jump = gamepad_button_check_pressed(pco_g, global.pco_gp[pco_b + 2]) || gamepad_button_check_pressed(pco_g, global.pco_gp[pco_b + 3]);
+}
+else
+{
+    key_left = keyboard_check(global.pco_kb[pco_b]);
+    key_right = keyboard_check(global.pco_kb[pco_b + 1]);
+    key_jump = keyboard_check_pressed(global.pco_kb[pco_b + 2]) || keyboard_check_pressed(global.pco_kb[pco_b + 3]);
+}
+
 var move = key_right - key_left;
 hsp = move * walksp;
 vsp += grv;
@@ -35,11 +56,11 @@ if (isDeath1 == 1)
     room_restart();
     audio_stop_sound(music_3);
 }
-if (keyboard_check(ord("D")))
+if (key_right)
 {
     sprite_index = sPlayerright;
 }
-if (keyboard_check(ord("A")))
+if (key_left)
 {
     sprite_index = sPlayerleft;
 }

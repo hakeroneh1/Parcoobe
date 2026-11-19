@@ -126,9 +126,9 @@ vis
 visible
 sound
 object_get_sprite
-PARCOOB
+PARCOOBE
 default
-Parcoob
+Parcoobe
 @@SleepMargin
 10
 @@DrawColour
@@ -1239,3 +1239,118 @@ gml_Object_oBackgroundMushroom_PreCreate_0
 gml_Object_oMushroomBleb_Create_0
 gml_Object_oMushroomBleb_Step_0
 gml_Object_oMushroomBleb_PreCreate_0
+gml_Object_oName_Step_0
+gml_Object_oName_Draw_64
+pco_ui
+pco_bind
+pco_sel
+pco_player
+pco_dev
+pco_dirty
+pco_snd
+pco_pad
+pco_gp
+pco_kb
+mouse_check_button_pressed
+device_mouse_x_to_gui
+device_mouse_y_to_gui
+audio_master_gain
+gamepad_button_check_pressed
+ini_open
+ini_write_real
+ini_close
+parcoobe.ini
+kb
+keys
+gp
+p1
+dev
+p2
+misc
+pco_rows
+pco_bx1
+pco_by1
+pco_bx2
+pco_by2
+pco_mx
+pco_my
+pco_p
+pco_slot
+pco_i
+pco_w
+draw_set_font
+draw_set_alpha
+make_colour_rgb
+draw_set_colour
+draw_rectangle
+draw_set_halign
+draw_set_valign
+draw_text_transformed
+array_create
+chr
+MENU
+CONTROLS
+FACE ONE
+FACE TWO
+FACE THREE
+FACE FOUR
+PAD LEFT
+PAD RIGHT
+PAD UP
+PAD DOWN
+SHOULDER L
+SHOULDER R
+START
+SELECT
+BUTTON
+LEFT
+RIGHT
+UP
+DOWN
+SPACE
+ENTER
+SHIFT
+CTRL
+ALT
+TAB
+BACKSPACE
+NUM PAD ZERO
+NUM PAD ONE
+NUM PAD TWO
+DIGIT
+KEY
+ARROWS SELECT   ENTER CHANGE   ESC BACK
+PLAYER
+ONE
+TWO
+DEVICE
+GAMEPAD
+KEYBOARD
+JUMP
+JUMP TWO
+SOUND
+ON
+OFF
+BACK
+PRESS A KEY
+OR A GAMEPAD BUTTON
+ESC CANCEL
+pco_b
+pco_names
+pco_j
+pco_nm
+pco_bb
+pco_kk
+pco_y
+pco_lbl
+pco_val
+pco_col
+pco_v
+variable_global_exists
+gamepad_is_connected
+file_exists
+ini_read_real
+gamepad_axis_value
+gamepad_button_check
+pco_g
+pco_ax

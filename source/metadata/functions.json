@@ -2,7 +2,7 @@
   {
     "name": "string",
     "classification": "None",
-    "occurrences": 32
+    "occurrences": 46
   },
   {
     "name": "ds_map_exists",
@@ -172,12 +172,12 @@
   {
     "name": "keyboard_check",
     "classification": "None",
-    "occurrences": 14
+    "occurrences": 8
   },
   {
     "name": "keyboard_check_pressed",
     "classification": "None",
-    "occurrences": 4
+    "occurrences": 14
   },
   {
     "name": "place_meeting",
@@ -202,7 +202,7 @@
   {
     "name": "variable_global_set",
     "classification": "None",
-    "occurrences": 2
+    "occurrences": 1
   },
   {
     "name": "part_particles_create",
@@ -238,5 +238,125 @@
     "name": "object_get_sprite",
     "classification": "None",
     "occurrences": 2
+  },
+  {
+    "name": "mouse_check_button_pressed",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "device_mouse_x_to_gui",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "device_mouse_y_to_gui",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "audio_master_gain",
+    "classification": "None",
+    "occurrences": 7
+  },
+  {
+    "name": "gamepad_button_check_pressed",
+    "classification": "None",
+    "occurrences": 7
+  },
+  {
+    "name": "ini_open",
+    "classification": "None",
+    "occurrences": 7
+  },
+  {
+    "name": "ini_write_real",
+    "classification": "None",
+    "occurrences": 5
+  },
+  {
+    "name": "ini_close",
+    "classification": "None",
+    "occurrences": 7
+  },
+  {
+    "name": "draw_set_font",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "draw_set_alpha",
+    "classification": "None",
+    "occurrences": 5
+  },
+  {
+    "name": "make_colour_rgb",
+    "classification": "None",
+    "occurrences": 11
+  },
+  {
+    "name": "draw_set_colour",
+    "classification": "None",
+    "occurrences": 14
+  },
+  {
+    "name": "draw_rectangle",
+    "classification": "None",
+    "occurrences": 7
+  },
+  {
+    "name": "draw_set_halign",
+    "classification": "None",
+    "occurrences": 4
+  },
+  {
+    "name": "draw_set_valign",
+    "classification": "None",
+    "occurrences": 2
+  },
+  {
+    "name": "draw_text_transformed",
+    "classification": "None",
+    "occurrences": 9
+  },
+  {
+    "name": "array_create",
+    "classification": "None",
+    "occurrences": 25
+  },
+  {
+    "name": "chr",
+    "classification": "None",
+    "occurrences": 1
+  },
+  {
+    "name": "variable_global_exists",
+    "classification": "None",
+    "occurrences": 6
+  },
+  {
+    "name": "gamepad_is_connected",
+    "classification": "None",
+    "occurrences": 6
+  },
+  {
+    "name": "file_exists",
+    "classification": "None",
+    "occurrences": 6
+  },
+  {
+    "name": "ini_read_real",
+    "classification": "None",
+    "occurrences": 30
+  },
+  {
+    "name": "gamepad_axis_value",
+    "classification": "None",
+    "occurrences": 3
+  },
+  {
+    "name": "gamepad_button_check",
+    "classification": "None",
+    "occurrences": 6
   }
 ]

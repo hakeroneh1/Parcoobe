@@ -1,6 +1,27 @@
-key_left = keyboard_check(vk_left);
-key_right = keyboard_check(vk_right);
-key_jump = keyboard_check_pressed(vk_space);
+// Parcoobe 1.0.1 — Step одиночного игрока (oPlayer, слот игрока 1).
+var pco_p = 1;
+var pco_b = 0;
+if (global.pco_ui == 1)
+{
+    key_left = 0;
+    key_right = 0;
+    key_jump = 0;
+}
+else if (global.pco_dev[pco_p] == 1)
+{
+    var pco_g = global.pco_pad[pco_p];
+    var pco_ax = gamepad_axis_value(pco_g, gp_axislh);
+    key_left = gamepad_button_check(pco_g, global.pco_gp[pco_b]) || pco_ax < -0.4;
+    key_right = gamepad_button_check(pco_g, global.pco_gp[pco_b + 1]) || pco_ax > 0.4;
+    key_jump = gamepad_button_check_pressed(pco_g, global.pco_gp[pco_b + 2]) || gamepad_button_check_pressed(pco_g, global.pco_gp[pco_b + 3]);
+}
+else
+{
+    key_left = keyboard_check(global.pco_kb[pco_b]);
+    key_right = keyboard_check(global.pco_kb[pco_b + 1]);
+    key_jump = keyboard_check_pressed(global.pco_kb[pco_b + 2]) || keyboard_check_pressed(global.pco_kb[pco_b + 3]);
+}
+
 var move = key_right - key_left;
 hsp = move * walksp;
 vsp += grv;
@@ -40,14 +61,14 @@ if (isDeath == 1 && global.hard == 1)
     audio_stop_sound(music_1);
     audio_stop_sound(music_4);
     audio_stop_sound(music_3);
-    variable_global_set(global.hard, 0);
+    global.hard = 0;
 }
-if (keyboard_check(vk_right))
+if (key_right)
 {
     sprite_index = sPlayerright;
     part_particles_create(global.partSystem, x, y + 32, global.partDS, 4);
 }
-if (keyboard_check(vk_left))
+if (key_left)
 {
     sprite_index = sPlayerleft;
 }

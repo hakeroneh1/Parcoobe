@@ -1,0 +1,132 @@
+// Parcoobe 1.0.1 — меню настроек управления (oName, комната Menu).
+var pco_rows = 8;
+var pco_bx1 = 1120;
+var pco_by1 = 32;
+var pco_bx2 = 1256;
+var pco_by2 = 84;
+
+// кнопка MENU мышью
+if (mouse_check_button_pressed(mb_left))
+{
+    var pco_mx = device_mouse_x_to_gui(0);
+    var pco_my = device_mouse_y_to_gui(0);
+    if (pco_mx >= pco_bx1 && pco_mx <= pco_bx2 && pco_my >= pco_by1 && pco_my <= pco_by2)
+    {
+        global.pco_ui = 1 - global.pco_ui;
+        global.pco_bind = -1;
+        global.pco_sel = 0;
+    }
+}
+
+// F1 — открыть/закрыть
+if (keyboard_check_pressed(vk_f1))
+{
+    global.pco_ui = 1 - global.pco_ui;
+    global.pco_bind = -1;
+    global.pco_sel = 0;
+}
+
+if (global.pco_ui == 1)
+{
+    var pco_sel = global.pco_sel;
+    if (global.pco_bind < 0)
+    {
+        if (keyboard_check_pressed(vk_up))
+        {
+            global.pco_sel = (pco_sel + pco_rows - 1) % pco_rows;
+        }
+        if (keyboard_check_pressed(vk_down))
+        {
+            global.pco_sel = (pco_sel + 1) % pco_rows;
+        }
+        if (keyboard_check_pressed(vk_enter))
+        {
+            if (pco_sel == 0)
+            {
+                global.pco_player = 3 - global.pco_player;
+            }
+            else if (pco_sel == 1)
+            {
+                global.pco_dev[global.pco_player] = 1 - global.pco_dev[global.pco_player];
+                global.pco_dirty = 1;
+            }
+            else if (pco_sel >= 2 && pco_sel <= 5)
+            {
+                global.pco_bind = pco_sel - 2;
+            }
+            else if (pco_sel == 6)
+            {
+                global.pco_snd = 1 - global.pco_snd;
+                audio_master_gain(global.pco_snd);
+                global.pco_dirty = 1;
+            }
+            else
+            {
+                global.pco_ui = 0;
+            }
+        }
+        if (keyboard_check_pressed(vk_escape))
+        {
+            global.pco_ui = 0;
+        }
+    }
+    else
+    {
+        // ждём нажатие клавиши или кнопки геймпада
+        var pco_p = global.pco_player;
+        var pco_slot = (pco_p - 1) * 4 + global.pco_bind;
+        var pco_i;
+        if (global.pco_dev[pco_p] == 1)
+        {
+            var pco_gp = global.pco_pad[pco_p];
+            for (pco_i = 32769; pco_i <= 32784; pco_i++)
+            {
+                if (gamepad_button_check_pressed(pco_gp, pco_i))
+                {
+                    global.pco_gp[pco_slot] = pco_i;
+                    global.pco_bind = -1;
+                    global.pco_dirty = 1;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for (pco_i = 1; pco_i < 256; pco_i++)
+            {
+                if (pco_i == 1 || pco_i == 2 || pco_i == 4 || pco_i == 5 || pco_i == 6 || pco_i == 27)
+                {
+                    continue;
+                }
+                if (keyboard_check_pressed(pco_i))
+                {
+                    global.pco_kb[pco_slot] = pco_i;
+                    global.pco_bind = -1;
+                    global.pco_dirty = 1;
+                    break;
+                }
+            }
+        }
+        if (keyboard_check_pressed(vk_escape))
+        {
+            global.pco_bind = -1;
+        }
+    }
+}
+
+// ── сохранение настроек
+if (global.pco_dirty == 1)
+{
+    var pco_w;
+    ini_open("parcoobe.ini");
+    for (pco_w = 0; pco_w < 8; pco_w++)
+    {
+        ini_write_real("keys", "kb" + string(pco_w), global.pco_kb[pco_w]);
+        ini_write_real("keys", "gp" + string(pco_w), global.pco_gp[pco_w]);
+    }
+    ini_write_real("dev", "p1", global.pco_dev[1]);
+    ini_write_real("dev", "p2", global.pco_dev[2]);
+    ini_write_real("misc", "sound", global.pco_snd);
+    ini_close();
+    global.pco_dirty = 0;
+}
