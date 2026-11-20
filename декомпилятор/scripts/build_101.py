@@ -74,15 +74,18 @@ def main():
     step_single = concat(os.path.join(tmp, "step_single.gml"),
                          os.path.join(MOD, "02_step_single.gml"),
                          os.path.join(MOD, "09_settings_step.gml"),
-                         os.path.join(MOD, "10_settings_ini.gml"))
+                         os.path.join(MOD, "10_settings_ini.gml"),
+                         os.path.join(MOD, "13_skin.gml"))
     step_p1 = concat(os.path.join(tmp, "step_p1.gml"),
                      os.path.join(MOD, "03_step_p1.gml"),
                      os.path.join(MOD, "09_settings_step.gml"),
-                     os.path.join(MOD, "10_settings_ini.gml"))
+                     os.path.join(MOD, "10_settings_ini.gml"),
+                     os.path.join(MOD, "13_skin.gml"))
     step_p2 = concat(os.path.join(tmp, "step_p2.gml"),
                      os.path.join(MOD, "04_step_p2.gml"),
                      os.path.join(MOD, "09_settings_step.gml"),
-                     os.path.join(MOD, "10_settings_ini.gml"))
+                     os.path.join(MOD, "10_settings_ini.gml"),
+                     os.path.join(MOD, "13_skin.gml"))
 
     create_single = concat(os.path.join(tmp, "create_single.gml"),
                            os.path.join(SRC, "objects", "oPlayer", "Create_0.gml"),
