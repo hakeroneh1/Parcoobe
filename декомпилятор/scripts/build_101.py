@@ -71,6 +71,19 @@ def main():
         "--scripts", os.path.join(ROOT, "декомпилятор", "scripts", "rename_to_parcoobe.csx"),
         "--output", base, "--overwrite")
 
+    step_single = concat(os.path.join(tmp, "step_single.gml"),
+                         os.path.join(MOD, "02_step_single.gml"),
+                         os.path.join(MOD, "09_settings_step.gml"),
+                         os.path.join(MOD, "10_settings_ini.gml"))
+    step_p1 = concat(os.path.join(tmp, "step_p1.gml"),
+                     os.path.join(MOD, "03_step_p1.gml"),
+                     os.path.join(MOD, "09_settings_step.gml"),
+                     os.path.join(MOD, "10_settings_ini.gml"))
+    step_p2 = concat(os.path.join(tmp, "step_p2.gml"),
+                     os.path.join(MOD, "04_step_p2.gml"),
+                     os.path.join(MOD, "09_settings_step.gml"),
+                     os.path.join(MOD, "10_settings_ini.gml"))
+
     create_single = concat(os.path.join(tmp, "create_single.gml"),
                            os.path.join(SRC, "objects", "oPlayer", "Create_0.gml"),
                            os.path.join(MOD, "01_init.gml"))
@@ -96,11 +109,15 @@ def main():
         "--code", "gml_Object_oName_Other_62=" + os.path.join(MOD, "07_async_http.gml"),
         "--code", "gml_Object_oPlayer_Collision_6d1efe77_b359_4bce_920b_b0511e55783a=" + os.path.join(MOD, "08_door_chain.gml"),
         "--code", "gml_Object_oPlayer_Create_0=" + create_single,
-        "--code", "gml_Object_oPlayer_Step_0=" + os.path.join(MOD, "02_step_single.gml"),
+        "--code", "gml_Object_oPlayer_Step_0=" + step_single,
+        "--code", "gml_Object_oPlayer_Draw_64=" + os.path.join(MOD, "11_settings_draw.gml"),
+        "--code", "gml_Object_oPlayer_1_Draw_64=" + os.path.join(MOD, "11_settings_draw.gml"),
+        "--code", "gml_Object_oPlayer_2_Draw_64=" + os.path.join(MOD, "11_settings_draw.gml"),
+        "--code", "gml_Object_oMushroomBleb_Step_0=" + os.path.join(MOD, "12_enemy_step.gml"),
         "--code", "gml_Object_oPlayer_1_Create_0=" + create_p1,
-        "--code", "gml_Object_oPlayer_1_Step_0=" + os.path.join(MOD, "03_step_p1.gml"),
+        "--code", "gml_Object_oPlayer_1_Step_0=" + step_p1,
         "--code", "gml_Object_oPlayer_2_Create_0=" + create_p2,
-        "--code", "gml_Object_oPlayer_2_Step_0=" + os.path.join(MOD, "04_step_p2.gml"),
+        "--code", "gml_Object_oPlayer_2_Step_0=" + step_p2,
         "--output", step_b)
 
     print("3/4 текстурная страница")
@@ -109,6 +126,9 @@ def main():
         raise SystemExit("нет " + tex + " — сначала запусти make_art_101.py")
     tex2 = os.path.join(ART, "texture2.png")
     args = ["--textures", "Texture 0=" + tex]
+    tex1 = os.path.join(ART, "texture1.png")
+    if os.path.exists(tex1):
+        args += ["--textures", "Texture 1=" + tex1]   # небо dead_city
     if os.path.exists(tex2):
         args += ["--textures", "Texture 2=" + tex2]   # финальный экран (sFin)
     run("replace", step_b, *args, "--output", os.path.join(ROOT, "build", "data.win"))

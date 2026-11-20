@@ -1,4 +1,4 @@
-// Parcoobe 2.0.3 — инициализация настроек управления.
+// Parcoobe 2.0.4 — инициализация настроек управления.
 // Этот блок дописывается в Create-события oPlayer / oPlayer_1 / oPlayer_2.
 if (!variable_global_exists("pco_v"))
 {
@@ -92,3 +92,17 @@ if (!variable_global_exists("pco_v"))
         audio_master_gain(global.pco_snd);
     }
 }
+
+// ── музыка сцены: у каждого акта своя тема, чтобы тишины не было нигде
+var pco_m = music_1;
+if (room == lvl_3 || room == lvl_4 || room == lvl_5) pco_m = music_2;
+if (room == chapter_2 || room == lvl_6 || room == lvl_7) pco_m = music_3;
+if (room == lvl_8) pco_m = music_4;
+if (room == p_2_lvl_1 || room == p_2_lvl_2) pco_m = music_1;
+if (room == p_2_lvl_3 || room == p_2_lvl_4) pco_m = music_2;
+if (room == p_2_lvl_5) pco_m = music_3;
+audio_stop_sound(music_1);
+audio_stop_sound(music_2);
+audio_stop_sound(music_3);
+audio_stop_sound(music_4);
+audio_play_sound(pco_m, 1000, true);

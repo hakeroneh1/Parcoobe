@@ -74,7 +74,7 @@ class Level:
         self.pads.append((col, surface_row))
 
     # --- результат -----------------------------------------------------
-    def to_json(self, player_col=2, enemies=()):
+    def to_json(self, player_col=2, enemies=(), two_players=False):
         inst = []
         for r in range(ROWS):
             for c in range(self.cols):
@@ -87,10 +87,15 @@ class Level:
         for (c, row) in self.pads:
             inst.append(["oJumpplatform", c * T + T // 2, row * T + 16, 0.5, 0.5])
         for (c, row) in enemies:
-            inst.append(["oMushroomBleb", c * T + T // 2, row * T + 16 - 24, 0.75, 0.75])
+            # origin у спрайта (0,0): ставим так, чтобы низ (48 px) стоял на поверхности
+            inst.append(["oMushroomBleb", c * T - 8, row * T + 16 - 48, 0.75, 0.75])
         door_x = (self.cols - 3) * T
         inst.append(["oDoor", door_x, FLOOR_Y - DOOR_H, 1.0, 1.5])
-        inst.append(["oPlayer", player_col * T + T // 2, FLOOR_Y, 0.5, 0.5])
+        if two_players:
+            inst.append(["oPlayer_1", player_col * T + T // 2, FLOOR_Y, 0.5, 0.5])
+            inst.append(["oPlayer_2", (player_col + 3) * T + T // 2, FLOOR_Y, 0.5, 0.5])
+        else:
+            inst.append(["oPlayer", player_col * T + T // 2, FLOOR_Y, 0.5, 0.5])
         return {"name": self.name, "width": self.cols * T, "height": ROWS * T + 16,
                 "instances": inst}
 
@@ -98,6 +103,7 @@ class Level:
 def lvl_1():
     """Обучение на две ширины экрана: ровный пол, ступеньки, яма, пара шипов."""
     L = Level("lvl_1", 80)
+    enemies = [(52, FLOOR_ROW), (68, FLOOR_ROW)]
     L.plat(17, 8, 14)
     L.plat(14, 16, 22)
     L.plat(11, 26, 31)
@@ -108,7 +114,7 @@ def lvl_1():
     L.spikes(56, 57)
     L.pad(62)
     L.plat(16, 64, 70)
-    return L.to_json()
+    return L.to_json(enemies=enemies)
 
 
 def lvl_2():
@@ -131,7 +137,7 @@ def lvl_2():
     L.pad(58)
     L.spikes(62, 65)
     L.plat(16, 60, 66)
-    return L.to_json()
+    return L.to_json(enemies=[(22, FLOOR_ROW), (50, FLOOR_ROW), (72, FLOOR_ROW)])
 
 
 def lvl_3():
@@ -156,7 +162,7 @@ def lvl_3():
     L.pit(58, 61)
     L.spikes(64, 67)
     L.plat(16, 62, 68)
-    return L.to_json()
+    return L.to_json(enemies=[(12, FLOOR_ROW), (36, FLOOR_ROW), (62, FLOOR_ROW), (74, FLOOR_ROW)])
 
 
 def lvl_4():
@@ -179,7 +185,7 @@ def lvl_4():
     L.spikes(60, 63)
     L.pad(68)
     L.plat(15, 66, 71)
-    return L.to_json()
+    return L.to_json(enemies=[(18, FLOOR_ROW), (40, FLOOR_ROW), (58, FLOOR_ROW), (74, FLOOR_ROW)])
 
 
 def lvl_5():
@@ -209,16 +215,157 @@ def lvl_5():
     L.pit(82, 85)
     L.pad(80)
     L.spikes(88, 91)
+    return L.to_json(enemies=[(10, FLOOR_ROW), (30, FLOOR_ROW), (52, FLOOR_ROW), (72, FLOOR_ROW), (94, FLOOR_ROW)])
+
+
+
+def chapter_1():
+    """Короткий вход после меню: пол, батут, дверь."""
+    L = Level("chapter_1", 60)
+    L.plat(17, 10, 16)
+    L.spikes(26, 27)
+    L.pit(34, 37)
+    L.plat(18, 34, 37)
+    L.pad(42)
     return L.to_json()
 
 
-LEVELS = [lvl_1, lvl_2, lvl_3, lvl_4, lvl_5]
+def chapter_2():
+    """Переход ко второму акту."""
+    L = Level("chapter_2", 60)
+    L.spikes(12, 14)
+    L.pit(22, 25)
+    L.plat(18, 22, 25)
+    L.pad(30)
+    L.plat(15, 38, 44)
+    L.spikes(48, 50)
+    return L.to_json()
+
+
+def lvl_6():
+    """Второй акт, легче финала: подъём по полкам и полосы шипов."""
+    L = Level("lvl_6", 80)
+    L.spikes(8, 10)
+    L.plat(17, 6, 12)
+    L.pit(16, 19)
+    L.plat(18, 16, 19)
+    L.pad(22)
+    L.spikes(26, 29)
+    L.plat(14, 24, 30)
+    L.pit(34, 37)
+    L.spikes(40, 43)
+    L.plat(16, 38, 44)
+    L.pad(48)
+    L.spikes(52, 55)
+    L.plat(13, 50, 56)
+    L.pit(60, 63)
+    L.plat(18, 60, 63)
+    L.pad(66)
+    L.spikes(70, 73)
+    return L.to_json(enemies=[(18, FLOOR_ROW), (46, FLOOR_ROW), (66, FLOOR_ROW)])
+
+
+def lvl_7():
+    """Плотный второй акт: батуты над шипами, узкие полки."""
+    L = Level("lvl_7", 80)
+    L.pad(4)
+    L.spikes(8, 11)
+    L.plat(15, 6, 12)
+    L.pit(14, 17)
+    L.spikes(20, 23)
+    L.plat(18, 14, 17)
+    L.pad(18)
+    L.plat(12, 22, 28)
+    L.spikes(30, 33)
+    L.pit(36, 39)
+    L.plat(17, 36, 39)
+    L.pad(42)
+    L.spikes(46, 49)
+    L.plat(14, 44, 50)
+    L.pit(54, 57)
+    L.spikes(60, 64)
+    L.plat(16, 58, 64)
+    L.pad(68)
+    L.spikes(72, 75)
+    return L.to_json(enemies=[(12, FLOOR_ROW), (34, FLOOR_ROW), (52, FLOOR_ROW), (70, FLOOR_ROW)])
+
+
+def lvl_8():
+    """Финал второго акта — самый злой: 3200 px, ямы и шипы подряд."""
+    L = Level("lvl_8", 100)
+    L.spikes(6, 9)
+    L.pad(4)
+    L.pit(12, 15)
+    L.plat(18, 12, 15)
+    L.spikes(18, 21)
+    L.plat(15, 16, 22)
+    L.pad(24)
+    L.pit(26, 29)
+    L.spikes(32, 36)
+    L.plat(13, 30, 36)
+    L.pit(40, 43)
+    L.plat(17, 40, 43)
+    L.pad(44)
+    L.spikes(48, 52)
+    L.plat(12, 46, 52)
+    L.pit(56, 59)
+    L.spikes(62, 66)
+    L.plat(16, 60, 66)
+    L.pad(68)
+    L.pit(72, 75)
+    L.spikes(78, 82)
+    L.plat(14, 76, 82)
+    L.pad(84)
+    L.spikes(88, 92)
+    return L.to_json(enemies=[(10, FLOOR_ROW), (28, FLOOR_ROW), (44, FLOOR_ROW), (60, FLOOR_ROW), (80, FLOOR_ROW), (95, FLOOR_ROW)])
+
+
+def p2(name, cols, spikes_at, pits_at, plats, pads):
+    """Кооперативный уровень на двоих (те же правила)."""
+    L = Level(name, cols)
+    for (c1, c2) in spikes_at:
+        L.spikes(c1, c2)
+    for (c1, c2) in pits_at:
+        L.pit(c1, c2)
+    for (row, c1, c2) in plats:
+        L.plat(row, c1, c2)
+    for c in pads:
+        L.pad(c)
+    return L.to_json(two_players=True)
+
+
+def two_player_levels():
+    return [
+        p2("p2_lvl_1", 80, [(12, 14), (28, 30)], [(20, 23)],
+           [(18, 20, 23), (17, 34, 40)], [10, 32, 50, 62]),
+        p2("p2_lvl_2", 80, [(10, 13), (24, 27), (40, 43)], [(16, 19), (34, 37)],
+           [(18, 16, 19), (18, 34, 37), (15, 46, 52)], [8, 30, 44, 58]),
+        p2("p2_lvl_3", 80, [(8, 11), (22, 25), (36, 39), (52, 55)], [(14, 17), (30, 33), (44, 47)],
+           [(18, 14, 17), (18, 30, 33), (18, 44, 47), (14, 56, 62)], [6, 20, 42, 50]),
+        p2("p2_lvl_4", 80, [(6, 10), (20, 24), (34, 38), (48, 52), (62, 66)],
+           [(12, 15), (28, 31), (42, 45), (56, 59)],
+           [(18, 12, 15), (18, 28, 31), (18, 42, 45), (18, 56, 59), (13, 66, 72)], [4, 26, 40, 54]),
+        p2("p2_lvl_5", 100, [(8, 12), (22, 26), (36, 40), (50, 54), (64, 68), (78, 82), (90, 94)],
+           [(14, 17), (28, 31), (42, 45), (56, 59), (70, 73), (84, 87)],
+           [(18, 14, 17), (18, 28, 31), (18, 42, 45), (18, 56, 59), (18, 70, 73), (18, 84, 87)],
+           [6, 20, 34, 48, 62, 76]),
+    ]
+
+
+
+LEVELS = [chapter_1, lvl_1, lvl_2, lvl_3, lvl_4, lvl_5, chapter_2, lvl_6, lvl_7, lvl_8]
+
+
+# имена комнат для парных уровней (в data.win они называются p_2_lvl_N)
+P2_NAMES = {"p2_lvl_1": "p_2_lvl_1", "p2_lvl_2": "p_2_lvl_2", "p2_lvl_3": "p_2_lvl_3",
+            "p2_lvl_4": "p_2_lvl_4", "p2_lvl_5": "p_2_lvl_5"}
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for make in LEVELS:
-        lv = make()
+    todo = [make() for make in LEVELS] + two_player_levels()
+    for lv in todo:
+        lv["name"] = P2_NAMES.get(lv["name"], lv["name"])
         path = os.path.join(OUT, lv["name"] + ".json")
         with open(path, "w", encoding="utf-8") as f:
             json.dump(lv, f, ensure_ascii=False, indent=1)

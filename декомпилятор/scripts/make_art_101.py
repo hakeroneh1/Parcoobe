@@ -17,6 +17,8 @@ import os
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 import numpy as np
 
+import art_tiles
+
 BG = (22, 22, 22)
 FILL = (255, 216, 157)
 EXTRUDE = (196, 140, 66)
@@ -24,7 +26,7 @@ EXTRUDE_DARK = (126, 84, 36)
 SHADOW = (8, 8, 8)
 GREEN = (150, 235, 130)
 WORD = "PARCOOBE"
-VERSION_TEXT = "Version 2.0.3"
+VERSION_TEXT = "Version 2.0.4"
 
 # оригинальные положения/ширины букв PARCOOB в sName (чтобы сохранить ритм)
 ORIG_WIDTHS = [185, 207, 186, 184, 187, 187, 185]
@@ -227,11 +229,25 @@ def main():
 
     page = Image.open(os.path.join(args.source, "textures", "Texture 0.png")).convert("RGBA")
     page2 = Image.open(os.path.join(args.source, "textures", "Texture 2.png")).convert("RGBA")
+    page1 = Image.open(os.path.join(args.source, "textures", "Texture 1.png")).convert("RGBA")
     page.paste(logo.convert("RGBA"), (2, 2))            # sName
-    # бесшовная кладка вместо оригинального sWall (у него чёрная рамка -> швы)
-    wall_tile = _seamless_wall()
+    # свои тайлы: кладка, шипы, батут (всё рисуется с нуля, стыкуется без швов)
+    wall_tile = art_tiles.brick_tile()
     wall_tile.save(os.path.join(args.out, "sWall.png"))
     page.paste(wall_tile, (682, 1946))                   # sWall
+
+    spikes = art_tiles.spikes_tile()
+    spikes.save(os.path.join(args.out, "sDanger.png"))
+    page.paste(spikes, (534, 1810))                      # sDanger
+
+    pad = art_tiles.pad_tile()
+    pad.save(os.path.join(args.out, "sJumpplatform.png"))
+    page.paste(pad, (2, 2010))                           # sJumpplatform
+
+    # стена на фоне — та же кладка, но тёмная
+    bg_wall = art_tiles.tile_bricks(1280, 720, base=(58, 62, 80), mortar=(18, 20, 30))
+    bg_wall.save(os.path.join(args.out, "bricks_background.png"))
+    page.paste(bg_wall, (2, 1086))                       # bricks_background
     page.paste(door, (138, 1942))                        # sDoor
     page.paste(closed, (1682, 1218))                     # sClosedoor
     page.save(os.path.join(args.out, "texture0.png"))
@@ -239,6 +255,12 @@ def main():
     # финальный экран: короткий заголовок вместо простыни текста (sFin на Texture 2)
     page2.paste(_fin_screen(page2, args.version_font), (2, 726))
     page2.save(os.path.join(args.out, "texture2.png"))
+
+    # своё ночное небо вместо оригинального dead_city (Texture 1, 2,2 1280x720)
+    sky = art_tiles.night_background()
+    sky.save(os.path.join(args.out, "dead_city.png"))
+    page1.paste(sky, (2, 2))
+    page1.save(os.path.join(args.out, "texture1.png"))
     print("готово:", args.out)
 
 
