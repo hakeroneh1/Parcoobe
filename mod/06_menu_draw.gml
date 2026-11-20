@@ -1,4 +1,4 @@
-// Parcoobe 2.0.6 — отрисовка кнопки MENU и панели настроек (oName, Draw GUI).
+// Parcoobe 2.0.7 — отрисовка кнопки MENU и панели настроек (oName, Draw GUI).
 draw_set_font(font_pix);
 draw_set_alpha(1);
 
@@ -181,11 +181,11 @@ if (global.pco_ui == 1)
 if (global.pco_ui == 1 && global.pco_msg_t > 0 && global.pco_msg != "")
 {
     draw_set_colour(make_colour_rgb(20, 40, 70));
-    draw_rectangle(320, 618, 960, 656, false);
+    draw_rectangle(300, 668, 980, 704, false);
     draw_set_colour(make_colour_rgb(150, 200, 255));
-    draw_rectangle(320, 618, 960, 656, true);
+    draw_rectangle(300, 668, 980, 704, true);
     draw_set_halign(fa_center);
-    draw_text_transformed(640, 628, global.pco_msg, 1.5, 1.5, 0);
+    draw_text_transformed(640, 678, global.pco_msg, 1.2, 1.2, 0);
     draw_set_halign(fa_left);
 }
 
