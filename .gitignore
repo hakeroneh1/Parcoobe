@@ -14,3 +14,6 @@ obj/
 # python
 __pycache__/
 *.pyc
+
+# rust
+rust3d/target/
