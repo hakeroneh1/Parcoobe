@@ -1,4 +1,4 @@
-// Parcoobe 2.0.5 — скины игрока: цвет куба, выбор по K, сохраняется в ini.
+// Parcoobe 2.0.6 — скины игрока: цвет куба, выбор по K, сохраняется в ini.
 if (!variable_global_exists("pco_skins"))
 {
     global.pco_skins = 5;

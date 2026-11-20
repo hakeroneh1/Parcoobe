@@ -26,7 +26,7 @@ EXTRUDE_DARK = (126, 84, 36)
 SHADOW = (8, 8, 8)
 GREEN = (150, 235, 130)
 WORD = "PARCOOBE"
-VERSION_TEXT = "Version 2.0.5"
+VERSION_TEXT = "Version 2.0.6"
 
 # оригинальные положения/ширины букв PARCOOB в sName (чтобы сохранить ритм)
 ORIG_WIDTHS = [185, 207, 186, 184, 187, 187, 185]

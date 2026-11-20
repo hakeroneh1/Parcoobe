@@ -1,4 +1,4 @@
-// Parcoobe 2.0.5 — инициализация настроек управления.
+// Parcoobe 2.0.6 — инициализация настроек управления.
 // Этот блок дописывается в Create-события oPlayer / oPlayer_1 / oPlayer_2.
 if (!variable_global_exists("pco_v"))
 {

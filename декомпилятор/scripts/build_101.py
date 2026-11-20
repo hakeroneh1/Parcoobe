@@ -75,17 +75,24 @@ def main():
                          os.path.join(MOD, "02_step_single.gml"),
                          os.path.join(MOD, "09_settings_step.gml"),
                          os.path.join(MOD, "10_settings_ini.gml"),
-                         os.path.join(MOD, "13_skin.gml"))
+                         os.path.join(MOD, "13_skin.gml"),
+                         os.path.join(MOD, "14_window_guard.gml"))
     step_p1 = concat(os.path.join(tmp, "step_p1.gml"),
                      os.path.join(MOD, "03_step_p1.gml"),
                      os.path.join(MOD, "09_settings_step.gml"),
                      os.path.join(MOD, "10_settings_ini.gml"),
-                     os.path.join(MOD, "13_skin.gml"))
+                     os.path.join(MOD, "13_skin.gml"),
+                         os.path.join(MOD, "14_window_guard.gml"))
     step_p2 = concat(os.path.join(tmp, "step_p2.gml"),
                      os.path.join(MOD, "04_step_p2.gml"),
                      os.path.join(MOD, "09_settings_step.gml"),
                      os.path.join(MOD, "10_settings_ini.gml"),
-                     os.path.join(MOD, "13_skin.gml"))
+                     os.path.join(MOD, "13_skin.gml"),
+                         os.path.join(MOD, "14_window_guard.gml"))
+
+    menu_step = concat(os.path.join(tmp, "menu_step.gml"),
+                       os.path.join(MOD, "05_menu_step.gml"),
+                       os.path.join(MOD, "14_window_guard.gml"))
 
     create_single = concat(os.path.join(tmp, "create_single.gml"),
                            os.path.join(SRC, "objects", "oPlayer", "Create_0.gml"),
@@ -107,7 +114,7 @@ def main():
     print("2/4 компиляция модов")
     step_b = os.path.join(tmp, "b.win")
     run("replace", step_a,
-        "--code", "gml_Object_oName_Step_0=" + os.path.join(MOD, "05_menu_step.gml"),
+        "--code", "gml_Object_oName_Step_0=" + menu_step,
         "--code", "gml_Object_oName_Draw_64=" + os.path.join(MOD, "06_menu_draw.gml"),
         "--code", "gml_Object_oName_Other_62=" + os.path.join(MOD, "07_async_http.gml"),
         "--code", "gml_Object_oPlayer_Collision_6d1efe77_b359_4bce_920b_b0511e55783a=" + os.path.join(MOD, "08_door_chain.gml"),

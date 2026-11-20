@@ -1,4 +1,4 @@
-// Parcoobe 2.0.5 — переходы: один маршрут на всю игру, с затемнением.
+// Parcoobe 2.0.6 — переходы: один маршрут на всю игру, с затемнением.
 transition_steps = 16;
 transition_color = c_black;
 transition_kind = 3;            // fade out -> fade in
