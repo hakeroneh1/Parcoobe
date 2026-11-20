@@ -1,4 +1,4 @@
-// Parcoobe 2.0.2 — отрисовка кнопки MENU и панели настроек (oName, Draw GUI).
+// Parcoobe 2.0.3 — отрисовка кнопки MENU и панели настроек (oName, Draw GUI).
 draw_set_font(font_pix);
 draw_set_alpha(1);
 

@@ -24,7 +24,7 @@ EXTRUDE_DARK = (126, 84, 36)
 SHADOW = (8, 8, 8)
 GREEN = (150, 235, 130)
 WORD = "PARCOOBE"
-VERSION_TEXT = "Version 2.0.2"
+VERSION_TEXT = "Version 2.0.3"
 
 # оригинальные положения/ширины букв PARCOOB в sName (чтобы сохранить ритм)
 ORIG_WIDTHS = [185, 207, 186, 184, 187, 187, 185]
@@ -167,6 +167,46 @@ def _seamless_wall():
     return img
 
 
+
+def _fin_screen(page2, title_font):
+    """Финальный экран: только заголовок «Спасибо за прохождение» и подпись версии.
+
+    Заголовок вырезается из оригинальной картинки sFin (нарисован от руки,
+    кириллица в игровом шрифте отсутствует), длинная простыня текста убирается.
+    """
+    src = page2.crop((2, 726, 2 + 1280, 726 + 720))
+    top = src.crop((0, 0, 1280, 110))
+    arr = np.array(top.convert("RGB")).astype(int).sum(axis=2)
+    ys, xs = np.where(arr > 120)          # всё, что не чёрный фон
+    if len(xs) == 0:
+        raise SystemExit("не нашёл заголовок на sFin")
+    title = src.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
+    title = title.resize((int(title.width * 0.72), int(title.height * 0.72)), Image.LANCZOS)
+
+    img = Image.new("RGBA", (1280, 720), (18, 16, 20, 255))
+    x = (1280 - title.width) // 2
+    y = 250 - title.height // 2
+    img.alpha_composite(title, (x, y))
+
+    d = ImageDraw.Draw(img)
+    sub = ImageFont.truetype(title_font, 96)
+    for text, fy, col in (("PARCOOBE", 430, (150, 235, 130)),
+                          (VERSION_TEXT.upper(), 540, (200, 200, 200)),
+                          ("SKR.SH/SEZ10UVOWVU", 620, (120, 120, 120))):
+        tmp = Image.new("L", (1200, 200), 0)
+        ImageDraw.Draw(tmp).text((10, 10), text, font=sub, fill=255)
+        bb = tmp.getbbox()
+        cut = tmp.crop(bb)
+        k = 0.72 if fy < 600 else 0.34
+        cut = cut.resize((int(cut.width * k), int(cut.height * k)), Image.LANCZOS)
+        img.alpha_composite(Image.merge("RGBA", (Image.new("L", cut.size, col[0]),
+                                                Image.new("L", cut.size, col[1]),
+                                                Image.new("L", cut.size, col[2]),
+                                                cut)),
+                            ((1280 - cut.width) // 2, fy))
+    return img
+
+
 def main():
     ap = argparse.ArgumentParser()
     base = os.path.dirname(os.path.abspath(__file__))
@@ -186,6 +226,7 @@ def main():
     closed.save(os.path.join(args.out, "sClosedoor.png"))
 
     page = Image.open(os.path.join(args.source, "textures", "Texture 0.png")).convert("RGBA")
+    page2 = Image.open(os.path.join(args.source, "textures", "Texture 2.png")).convert("RGBA")
     page.paste(logo.convert("RGBA"), (2, 2))            # sName
     # бесшовная кладка вместо оригинального sWall (у него чёрная рамка -> швы)
     wall_tile = _seamless_wall()
@@ -194,6 +235,10 @@ def main():
     page.paste(door, (138, 1942))                        # sDoor
     page.paste(closed, (1682, 1218))                     # sClosedoor
     page.save(os.path.join(args.out, "texture0.png"))
+
+    # финальный экран: короткий заголовок вместо простыни текста (sFin на Texture 2)
+    page2.paste(_fin_screen(page2, args.version_font), (2, 726))
+    page2.save(os.path.join(args.out, "texture2.png"))
     print("готово:", args.out)
 
 

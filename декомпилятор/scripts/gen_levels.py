@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Генерация уровней lvl_1..lvl_5 (5 штук с нуля, сетка 32 px).
+"""Генерация уровней lvl_1..lvl_5: широкие комнаты, сетка 32 px.
 
 Пишет уровни/lvl_N.json в формате, который читает build_101.csx:
     [[object_name, x, y, scale_x, scale_y], ...]
 
 Геометрия — как в оригинальных комнатах:
-  комната 1280x720 (40 x 22 клеток по 32 px);
+  клетка 32 px, пол в нижней клетке, её верх = 688;
   oWall/oDanger/oDoor — origin (0,0), спрайт 64x64, scale 0.5 -> клетка 32x32;
-  пол — нижняя клетка, её верх = 688 (row 21);
-  игрок стоит на полу: y = 688, scale 0.5 (как в Menu и оригинальном lvl_1);
-  батут — origin (32,32), ставится центром на поверхность (y = 688);
-  дверь — 64x96 (scale 1.0 x 1.5), стоит на полу: x = 1184, y = 592.
+  игрок стоит на полу: y = 688, scale 0.5;
+  батут — origin (32,32), центр ставится на поверхность;
+  дверь — 64x96 (scale 1.0 x 1.5), стоит на полу справа.
+
+Комнаты шире экрана (2560 / 3200 px): в игре включён вид, который едет за игроком
+(см. build_101.csx), поэтому уровень длиннее экрана.
 
 Запуск из корня репозитория:  python3 декомпилятор/scripts/gen_levels.py
 """
@@ -21,124 +23,193 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUT = os.path.join(ROOT, "уровни")
 
 T = 32
-COLS, ROWS = 40, 22
-FLOOR_ROW = ROWS - 1          # 21
-FLOOR_Y = FLOOR_ROW * T + 16  # 688 — как в оригинальных комнатах
+ROWS = 22
+FLOOR_ROW = ROWS - 1          # 21 -> верх пола 688
+FLOOR_Y = FLOOR_ROW * T + 16  # 688
+DOOR_W, DOOR_H = 64, 96
 
-PLAYER_Y = FLOOR_Y            # как в оригинале: игрок стоит ровно на полу
-DOOR_X, DOOR_Y = 1184, 592
-
-
-def blank():
-    """Пустая комната: потолок, пол, боковые стены."""
-    g = [[" "] * COLS for _ in range(ROWS)]
-    for c in range(COLS):
-        g[0][c] = "#"
-        g[FLOOR_ROW][c] = "#"
-    for r in range(ROWS):
-        g[r][0] = "#"
-        g[r][COLS - 1] = "#"
-    return g
+# прыжок: vsp = -10, grv = 0.3, walksp = 4  ->  ~5 клеток вверх, ~8 в длину
+MAX_PIT = 4                   # ямы не шире 4 клеток (128 px)
+MAX_RISE = 4                  # ступеньки не выше 4 клеток (128 px)
 
 
-def fill(g, row, c1, c2, ch="#"):
-    for c in range(c1, c2 + 1):
-        if 0 <= c < COLS and 0 <= row < ROWS:
-            g[row][c] = ch
+class Level:
+    def __init__(self, name, cols):
+        self.name = name
+        self.cols = cols
+        self.g = [[" "] * cols for _ in range(ROWS)]
+        self.pads = []        # (col, surface_row)
+        self._frame()
 
+    def _frame(self):
+        g = self.g
+        for c in range(self.cols):
+            g[0][c] = "#"
+            g[FLOOR_ROW][c] = "#"
+        for r in range(ROWS):
+            g[r][0] = "#"
+            g[r][self.cols - 1] = "#"
 
-def block(g, row1, row2, c1, c2, ch="#"):
-    for r in range(row1, row2 + 1):
-        fill(g, r, c1, c2, ch)
+    # --- примитивы -----------------------------------------------------
+    def wall(self, row1, row2, c1, c2):
+        for r in range(row1, row2 + 1):
+            for c in range(c1, c2 + 1):
+                if 0 <= r < ROWS and 0 <= c < self.cols:
+                    self.g[r][c] = "#"
 
+    def plat(self, row, c1, c2):
+        self.wall(row, row, c1, c2)
 
-def pit(g, c1, c2):
-    """Дырка в полу (пустота), чтобы падать вниз было чем."""
-    fill(g, FLOOR_ROW, c1, c2, " ")
+    def pit(self, c1, c2=None):
+        c2 = c1 if c2 is None else c2
+        for c in range(c1, c2 + 1):
+            self.g[FLOOR_ROW][c] = " "
 
+    def spikes(self, c1, c2=None):
+        c2 = c1 if c2 is None else c2
+        for c in range(c1, c2 + 1):
+            self.g[FLOOR_ROW][c] = "^"
 
-def spikes(g, c1, c2):
-    """Шипы на полу: стоят вровень с полом, как в оригинальных уровнях."""
-    fill(g, FLOOR_ROW, c1, c2, "^")
+    def pad(self, col, surface_row=FLOOR_ROW):
+        self.pads.append((col, surface_row))
 
-
-def convert(name, g, player_col, pads=(), enemies=()):
-    inst = []
-    for r in range(ROWS):
-        for c in range(COLS):
-            ch = g[r][c]
-            x, y = c * T, r * T + 16
-            if ch == "#":
-                inst.append(["oWall", x, y, 0.5, 0.5])
-            elif ch == "^":
-                inst.append(["oDanger", x, y, 0.5, 0.5])
-    for (c, surface_row) in pads:
-        # батут — origin в центре, центр ставим на поверхность (как в оригинале)
-        inst.append(["oJumpplatform", c * T + T // 2, surface_row * T + 16, 0.5, 0.5])
-    for (c, surface_row) in enemies:
-        # гриб стоит на поверхности: спрайт 64x64 scale 0.75 -> 48 px
-        inst.append(["oMushroomBleb", c * T + T // 2, surface_row * T + 16 - 24, 0.75, 0.75])
-    inst.append(["oDoor", DOOR_X, DOOR_Y, 1.0, 1.5])
-    inst.append(["oPlayer", player_col * T + T // 2, PLAYER_Y, 0.5, 0.5])
-    return {"name": name, "width": COLS * T, "height": ROWS * T, "instances": inst}
+    # --- результат -----------------------------------------------------
+    def to_json(self, player_col=2, enemies=()):
+        inst = []
+        for r in range(ROWS):
+            for c in range(self.cols):
+                ch = self.g[r][c]
+                x, y = c * T, r * T + 16
+                if ch == "#":
+                    inst.append(["oWall", x, y, 0.5, 0.5])
+                elif ch == "^":
+                    inst.append(["oDanger", x, y, 0.5, 0.5])
+        for (c, row) in self.pads:
+            inst.append(["oJumpplatform", c * T + T // 2, row * T + 16, 0.5, 0.5])
+        for (c, row) in enemies:
+            inst.append(["oMushroomBleb", c * T + T // 2, row * T + 16 - 24, 0.75, 0.75])
+        door_x = (self.cols - 3) * T
+        inst.append(["oDoor", door_x, FLOOR_Y - DOOR_H, 1.0, 1.5])
+        inst.append(["oPlayer", player_col * T + T // 2, FLOOR_Y, 0.5, 0.5])
+        return {"name": self.name, "width": self.cols * T, "height": ROWS * T + 16,
+                "instances": inst}
 
 
 def lvl_1():
-    """Обучение: ровный пол, ступеньки, один батут, немного шипов."""
-    g = blank()
-    block(g, 17, 18, 8, 12)
-    block(g, 14, 15, 14, 18)
-    block(g, 11, 12, 22, 26)
-    spikes(g, 30, 31)
-    return convert("lvl_1", g, 2, pads=[(5, FLOOR_ROW)])
+    """Обучение на две ширины экрана: ровный пол, ступеньки, яма, пара шипов."""
+    L = Level("lvl_1", 80)
+    L.plat(17, 8, 14)
+    L.plat(14, 16, 22)
+    L.plat(11, 26, 31)
+    L.spikes(34, 35)
+    L.pit(42, 45)
+    L.plat(18, 42, 45)          # мостик над ямой
+    L.pad(38)
+    L.spikes(56, 57)
+    L.pad(62)
+    L.plat(16, 64, 70)
+    return L.to_json()
 
 
 def lvl_2():
-    """Две ямы и полка над ними: прыжки через пустоту."""
-    g = blank()
-    pit(g, 12, 15)
-    pit(g, 26, 29)
-    block(g, 18, 18, 12, 15)
-    block(g, 18, 18, 26, 29)
-    spikes(g, 20, 21)
-    return convert("lvl_2", g, 2, pads=[(7, FLOOR_ROW), (31, FLOOR_ROW)])
+    """Две ямы, шипы по полу и полкам, батуты перед длинными полосами."""
+    L = Level("lvl_2", 80)
+    L.pit(10, 13)
+    L.plat(18, 10, 13)
+    L.spikes(18, 20)
+    L.plat(17, 16, 21)
+    L.plat(14, 24, 30)
+    L.pad(26)
+    L.pit(28, 31)
+    L.spikes(34, 36)
+    L.plat(13, 34, 38)
+    L.pad(40)
+    L.spikes(44, 47)
+    L.plat(14, 48, 54)
+    L.pit(54, 57)
+    L.plat(18, 54, 57)
+    L.pad(58)
+    L.spikes(62, 65)
+    L.plat(16, 60, 66)
+    return L.to_json()
 
 
 def lvl_3():
-    """Три полосы шипов и платформы, чтобы их перепрыгивать."""
-    g = blank()
-    spikes(g, 8, 10)
-    spikes(g, 17, 19)
-    spikes(g, 25, 27)
-    block(g, 17, 18, 12, 14)
-    block(g, 17, 18, 21, 23)
-    block(g, 14, 15, 29, 32)
-    return convert("lvl_3", g, 2, pads=[(13, FLOOR_ROW), (30, FLOOR_ROW)])
+    """Плотнее: шипы вперемешку с ямами, прыжки по узким полкам."""
+    L = Level("lvl_3", 80)
+    L.spikes(8, 10)
+    L.pit(14, 17)
+    L.plat(15, 14, 17)
+    L.spikes(20, 22)
+    L.plat(17, 18, 23)
+    L.pad(24)
+    L.pit(26, 29)
+    L.spikes(32, 35)
+    L.plat(13, 30, 36)
+    L.pad(38)
+    L.spikes(40, 42)
+    L.pit(44, 47)
+    L.plat(18, 44, 47)
+    L.plat(14, 48, 54)
+    L.spikes(50, 53)
+    L.pad(56)
+    L.pit(58, 61)
+    L.spikes(64, 67)
+    L.plat(16, 62, 68)
+    return L.to_json()
 
 
 def lvl_4():
-    """Подъём по полкам и яма перед дверью."""
-    g = blank()
-    pit(g, 30, 33)
-    block(g, 18, 18, 6, 10)
-    block(g, 15, 15, 12, 17)
-    block(g, 12, 12, 19, 24)
-    block(g, 9, 9, 26, 32)
-    spikes(g, 20, 21)
-    return convert("lvl_4", g, 2, pads=[(4, FLOOR_ROW), (14, 18), (28, 9)])
+    """Подъём: длинная лестница полок с шипами и батутами, дверь внизу справа."""
+    L = Level("lvl_4", 80)
+    L.spikes(6, 8)
+    L.pad(4)
+    L.plat(18, 10, 15)
+    L.plat(15, 16, 21)
+    L.plat(12, 22, 28)
+    L.pad(27)
+    L.spikes(30, 32)
+    L.plat(9, 30, 36)
+    L.plat(12, 38, 44)
+    L.spikes(46, 49)
+    L.pit(52, 55)
+    L.plat(17, 52, 55)
+    L.pad(50)
+    L.plat(14, 58, 64)
+    L.spikes(60, 63)
+    L.pad(68)
+    L.plat(15, 66, 71)
+    return L.to_json()
 
 
 def lvl_5():
-    """Финал: две ямы, шипы, батуты."""
-    g = blank()
-    pit(g, 9, 12)
-    pit(g, 22, 25)
-    spikes(g, 16, 17)
-    spikes(g, 30, 31)
-    block(g, 17, 18, 9, 12)
-    block(g, 15, 15, 18, 21)
-    block(g, 12, 12, 26, 29)
-    return convert("lvl_5", g, 2, pads=[(6, FLOOR_ROW), (27, 15)])
+    """Финал: всё сразу — ямы, шипы, батуты; уровень шире (3200)."""
+    L = Level("lvl_5", 100)
+    L.spikes(8, 11)
+    L.pit(14, 17)
+    L.plat(18, 14, 17)
+    L.spikes(20, 23)
+    L.pad(18)
+    L.plat(15, 22, 28)
+    L.pit(30, 33)
+    L.plat(17, 30, 33)
+    L.pad(34)
+    L.spikes(36, 39)
+    L.plat(13, 40, 46)
+    L.spikes(42, 45)
+    L.pit(48, 51)
+    L.pad(52)
+    L.spikes(54, 58)
+    L.plat(16, 54, 60)
+    L.pit(62, 65)
+    L.plat(18, 62, 65)
+    L.pad(66)
+    L.spikes(68, 71)
+    L.plat(14, 72, 78)
+    L.pit(82, 85)
+    L.pad(80)
+    L.spikes(88, 91)
+    return L.to_json()
 
 
 LEVELS = [lvl_1, lvl_2, lvl_3, lvl_4, lvl_5]
@@ -151,7 +222,7 @@ def main():
         path = os.path.join(OUT, lv["name"] + ".json")
         with open(path, "w", encoding="utf-8") as f:
             json.dump(lv, f, ensure_ascii=False, indent=1)
-        print(lv["name"], len(lv["instances"]), "инстансов")
+        print("%-6s %6d px, %d инстансов" % (lv["name"], lv["width"], len(lv["instances"])))
 
 
 if __name__ == "__main__":

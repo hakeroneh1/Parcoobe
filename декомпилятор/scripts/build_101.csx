@@ -105,7 +105,69 @@ if (!string.IsNullOrEmpty(levelsDir))
             instLayer.InstancesData.Instances.Add(go);
             count++;
         }
+        // размер комнаты берём из JSON: уровни шире экрана
+        room.Width = doc.RootElement.GetProperty("width").GetUInt32();
+        room.Height = doc.RootElement.GetProperty("height").GetUInt32();
+
+        // вид, который едет за игроком: без флага EnableViews камера не создаётся
+        room.Flags |= UndertaleRoom.RoomEntryFlags.EnableViews;
+        var view = room.Views[0];
+        view.Enabled = true;
+        view.ViewX = 0;
+        view.ViewY = 0;
+        view.ViewWidth = 1280;
+        view.ViewHeight = 720;
+        view.PortX = 0;
+        view.PortY = 0;
+        view.PortWidth = 1280;
+        view.PortHeight = 720;
+        view.BorderX = 320;
+        view.BorderY = 96;
+        view.SpeedX = -1;
+        view.SpeedY = -1;
+        view.ObjectId = playerObj;
+
+        // фон: город тайлится по горизонтали и едет медленнее комнаты (параллакс)
+        var citySprite = Data.Sprites.ByName("dead_city");
+        int bgDepth = 0;
+        foreach (var layer in room.Layers)
+        {
+            if (layer.BackgroundData != null)
+            {
+                layer.BackgroundData.Sprite = citySprite;
+                layer.BackgroundData.TiledHorizontally = true;
+                layer.BackgroundData.TiledVertically = false;
+                layer.BackgroundData.Color = 0xB0465566;
+                layer.HSpeed = 0.55f;
+                layer.VSpeed = 0.0f;
+                bgDepth = System.Math.Max(bgDepth, layer.LayerDepth);
+            }
+        }
+
+        // позади города — слой кладки, ещё медленнее: на фоне всегда есть фактура
+        if (!room.Layers.Any(l => l.LayerName.Content == "BGBack"))
+        {
+            var bd = new UndertaleRoom.Layer.LayerBackgroundData();
+            bd.Sprite = Data.Sprites.ByName("bricks_background");
+            bd.TiledHorizontally = true;
+            bd.TiledVertically = false;
+            bd.Stretch = false;
+            bd.Color = 0x60241820;
+            var back = new UndertaleRoom.Layer
+            {
+                LayerName = Data.Strings.MakeString("BGBack"),
+                LayerId = 500,
+                LayerType = UndertaleRoom.LayerType.Background,
+                LayerDepth = bgDepth + 100,
+                IsVisible = true,
+                HSpeed = 0.25f,
+                VSpeed = 0.0f,
+                Data = bd,
+            };
+            room.Layers.Add(back);
+        }
+
         room.SetupRoom(false, false);
-        Console.WriteLine("rebuilt " + name + ": " + count + " instances");
+        Console.WriteLine("rebuilt " + name + ": " + count + " instances, " + room.Width + "x" + room.Height + ", view=" + view.Enabled);
     }
 }

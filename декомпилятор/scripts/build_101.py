@@ -107,8 +107,11 @@ def main():
     tex = os.path.join(ART, "texture0.png")
     if not os.path.exists(tex):
         raise SystemExit("нет " + tex + " — сначала запусти make_art_101.py")
-    run("replace", step_b, "--textures", "Texture 0=" + tex,
-        "--output", os.path.join(ROOT, "build", "data.win"))
+    tex2 = os.path.join(ART, "texture2.png")
+    args = ["--textures", "Texture 0=" + tex]
+    if os.path.exists(tex2):
+        args += ["--textures", "Texture 2=" + tex2]   # финальный экран (sFin)
+    run("replace", step_b, *args, "--output", os.path.join(ROOT, "build", "data.win"))
 
     print("готово: build/data.win")
     shutil.rmtree(tmp, ignore_errors=True)

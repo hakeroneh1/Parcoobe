@@ -1,4 +1,4 @@
-// Parcoobe 2.0.2 — меню настроек управления (oName, комната Menu).
+// Parcoobe 2.0.3 — меню настроек управления (oName, комната Menu).
 var pco_rows = 10;
 var pco_bx1 = 1120;
 var pco_by1 = 32;

@@ -1,8 +1,16 @@
-// Parcoobe 2.0.2 — Step игрока 1 (двухигровой режим).
+// Parcoobe 2.0.3 — Step игрока 1 (двухигровой режим).
 // F11 — полный экран
 if (keyboard_check_pressed(vk_f11))
 {
     window_set_fullscreen(!window_get_fullscreen());
+}
+
+// камера едет за игроком (уровни шире экрана; в меню вид выключен)
+if (room_width > 1280 && view_camera[0] != -1)
+{
+    camera_set_view_pos(view_camera[0],
+        clamp(x - 640, 0, room_width - 1280),
+        clamp(y - 360, 0, max(0, room_height - 720)));
 }
 
 var pco_p = 1;
