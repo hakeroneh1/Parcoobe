@@ -63,7 +63,7 @@ if (!variable_global_exists("pco_v"))
     global.pco_dirty = 0;
 
     // авто-обновление
-    global.pco_ver = "1.0.2";
+    global.pco_ver = "2.0.1";
     global.pco_upd_auto = 1;      // проверять обновления при запуске
     global.pco_upd_checked = 0;   // проверка уже выполнена
     global.pco_upd = 0;           // найдено обновление

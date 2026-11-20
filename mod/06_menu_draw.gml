@@ -2,23 +2,12 @@
 draw_set_font(font_pix);
 draw_set_alpha(1);
 
-// ── кнопка MENU (вместо старых кнопок звука и выхода)
-var pco_bx1 = 1120;
-var pco_by1 = 32;
-var pco_bx2 = 1256;
-var pco_by2 = 84;
-draw_set_colour(make_colour_rgb(170, 28, 38));
-draw_rectangle(pco_bx1, pco_by1, pco_bx2, pco_by2, false);
-draw_set_colour(make_colour_rgb(70, 20, 24));
-draw_rectangle(pco_bx1, pco_by1, pco_bx2, pco_by2, true);
-draw_set_colour(c_white);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_text_transformed((pco_bx1 + pco_bx2) * 0.5, (pco_by1 + pco_by2) * 0.5, "MENU", 2.4, 2.4, 0);
-draw_set_colour(make_colour_rgb(200, 200, 200));
-draw_text_transformed((pco_bx1 + pco_bx2) * 0.5, pco_by2 + 18, "CONTROLS", 1.3, 1.3, 0);
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
+// подсказка
+if (global.pco_ui == 0)
+{
+    draw_set_colour(make_colour_rgb(150, 150, 150));
+    draw_text_transformed(20, 692, "F1 CONTROLS", 1.0, 1.0, 0);
+}
 
 if (global.pco_ui == 1)
 {
@@ -178,8 +167,8 @@ if (global.pco_ui == 1)
     }
 }
 
-// сообщение о проверке обновления
-if (global.pco_msg_t > 0 && global.pco_msg != "")
+// сообщение о проверке обновления — только в панели, чтобы не лезло в меню
+if (global.pco_ui == 1 && global.pco_msg_t > 0 && global.pco_msg != "")
 {
     draw_set_colour(make_colour_rgb(20, 40, 70));
     draw_rectangle(320, 618, 960, 656, false);

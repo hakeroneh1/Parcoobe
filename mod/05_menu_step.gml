@@ -5,19 +5,6 @@ var pco_by1 = 32;
 var pco_bx2 = 1256;
 var pco_by2 = 84;
 
-// кнопка MENU мышью
-if (mouse_check_button_pressed(mb_left))
-{
-    var pco_mx = device_mouse_x_to_gui(0);
-    var pco_my = device_mouse_y_to_gui(0);
-    if (pco_mx >= pco_bx1 && pco_mx <= pco_bx2 && pco_my >= pco_by1 && pco_my <= pco_by2)
-    {
-        global.pco_ui = 1 - global.pco_ui;
-        global.pco_bind = -1;
-        global.pco_sel = 0;
-    }
-}
-
 // F1 — открыть/закрыть
 if (keyboard_check_pressed(vk_f1))
 {

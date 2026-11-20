@@ -51,6 +51,11 @@ if (place_meeting(x, y + vsp, oJumpplatform))
 {
     vsp = -17;
 }
+// страховка: не провалиться за нижнюю границу комнаты
+if (y > room_height + 64)
+{
+    room_restart();
+}
 if (isDeath1 == 1)
 {
     room_restart();

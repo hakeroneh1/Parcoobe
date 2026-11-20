@@ -30,72 +30,36 @@ AddEvent("oName", "gml_Object_oName_Step_0", 3, 0);
 AddEvent("oName", "gml_Object_oName_Draw_64", 8, 64);
 AddEvent("oName", "gml_Object_oName_Other_62", 7, 62);   // Async - HTTP
 
-// 2. Убираем из комнаты Menu старые кнопки: выход (X) и звук — вместо них кнопка MENU.
-var menu = Data.Rooms.ByName("Menu");
-bool IsButton(UndertaleRoom.GameObject inst)
-{
-    string name = inst.ObjectDefinition?.Name?.Content;
-    return name == "oExitbutton" || name == "oSound_button";
-}
-
-int removed = 0;
-foreach (var layer in menu.Layers)
-{
-    var data = layer.InstancesData;
-    if (data == null)
-        continue;
-    for (int i = data.Instances.Count - 1; i >= 0; i--)
-    {
-        if (IsButton(data.Instances[i]))
-        {
-            data.Instances.RemoveAt(i);
-            removed++;
-        }
-    }
-}
-// в GMS2 у комнаты есть ещё и плоский список инстансов (по нему тоже создаются объекты)
-if (menu.GameObjects != null)
-{
-    var ids = new System.Collections.Generic.List<uint>();
-    for (int i = menu.GameObjects.Count - 1; i >= 0; i--)
-    {
-        if (IsButton(menu.GameObjects[i]))
-        {
-            ids.Add(menu.GameObjects[i].InstanceID);
-            menu.GameObjects.RemoveAt(i);
-            removed++;
-        }
-    }
-    if (ids.Count > 0 && menu.InstanceCreationOrderIDs != null)
-    {
-        var order = menu.InstanceCreationOrderIDs.InstanceIDs;
-        for (int i = order.Count - 1; i >= 0; i--)
-            if (ids.Contains(order[i]))
-                order.RemoveAt(i);
-    }
-}
-Console.WriteLine("removed menu buttons: " + removed);
-
-// 3. Двери-выходы справа стояли за краем экрана (x=1280) — сдвигаем их в кадр,
-//    чтобы входы были видны и в них можно было войти, не уходя за границу комнаты.
-int movedDoors = 0;
+// 2. Выравниваем позиции тайлов по целым пикселям: дробные координаты
+//    (59.0 / 27.2 и т.п.) давали швы между текстурами стен.
+int snapped = 0;
 foreach (var room in Data.Rooms)
 {
-    void FixDoor(UndertaleRoom.GameObject inst)
+    void Snap(UndertaleRoom.GameObject inst)
     {
         string name = inst.ObjectDefinition?.Name?.Content;
-        if (name != null && name.StartsWith("oDoor") && inst.X >= 1280)
+        if (name == null)
+            return;
+        bool tile = name == "oWall" || name == "oDanger" || name == "oDoor"
+                 || name == "oClosedoor" || name == "oDoorHard" || name == "oDoorlevelselect"
+                 || name == "oDoorSkins" || name == "oDoor2player" || name == "oJumpplatform";
+        if (!tile)
+            return;
+        int nx = (int)System.Math.Round((double)inst.X);
+        int ny = (int)System.Math.Round((double)inst.Y);
+        if (nx != inst.X || ny != inst.Y)
         {
-            inst.X = 1216;
-            movedDoors++;
+            inst.X = nx;
+            inst.Y = ny;
+            snapped++;
         }
     }
     foreach (var layer in room.Layers)
         if (layer.InstancesData != null)
             foreach (var inst in layer.InstancesData.Instances)
-                FixDoor(inst);
+                Snap(inst);
     if (room.GameObjects != null)
         foreach (var inst in room.GameObjects)
-            FixDoor(inst);
+            Snap(inst);
 }
-Console.WriteLine("moved doors into view: " + movedDoors);
+Console.WriteLine("snapped tile positions: " + snapped);
