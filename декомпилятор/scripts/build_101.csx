@@ -29,7 +29,39 @@ void AddEvent(string objName, string codeName, int evType, uint evSubtype)
 AddEvent("oName", "gml_Object_oName_Step_0", 3, 0);
 AddEvent("oName", "gml_Object_oName_Draw_64", 8, 64);
 AddEvent("oName", "gml_Object_oName_Other_62", 7, 62);   // Async - HTTP
+AddEvent("oPlayer", "gml_Object_oPlayer_Draw_64", 8, 64);      // панель CONTROLS в уровнях
+AddEvent("oPlayer_1", "gml_Object_oPlayer_1_Draw_64", 8, 64);
+AddEvent("oPlayer_2", "gml_Object_oPlayer_2_Draw_64", 8, 64);
 
+
+// 1b. В меню вместо стрелок — клавиши A и D (по умолчанию ходят на A/D)
+if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("LEVELS_DIR")))
+{
+    var menu = Data.Rooms.ByName("Menu");
+    if (menu != null)
+    {
+        var aObj = Data.GameObjects.ByName("oButtonA");
+        var dObj = Data.GameObjects.ByName("oButtonD");
+        var leftObj = Data.GameObjects.ByName("oButtonLeft");
+        var rightObj = Data.GameObjects.ByName("oButtonRight");
+        int swapped = 0;
+        foreach (var layer in menu.Layers)
+        {
+            if (layer.InstancesData == null) continue;
+            foreach (var go in layer.InstancesData.Instances)
+            {
+                if (go.ObjectDefinition == leftObj) { go.ObjectDefinition = aObj; swapped++; }
+                else if (go.ObjectDefinition == rightObj) { go.ObjectDefinition = dObj; swapped++; }
+            }
+        }
+        foreach (var go in menu.GameObjects)
+        {
+            if (go.ObjectDefinition == leftObj) go.ObjectDefinition = aObj;
+            else if (go.ObjectDefinition == rightObj) go.ObjectDefinition = dObj;
+        }
+        Console.WriteLine("menu keys swapped: " + swapped);
+    }
+}
 
 // 2. Полная переделка уровней: lvl_1..lvl_5 собираются с нуля из LEVELS_DIR/*.json
 string levelsDir = Environment.GetEnvironmentVariable("LEVELS_DIR");
@@ -41,8 +73,12 @@ if (!string.IsNullOrEmpty(levelsDir))
     var jumpObj = Data.GameObjects.ByName("oJumpplatform");
     var playerObj = Data.GameObjects.ByName("oPlayer");
     var enemyObj = Data.GameObjects.ByName("oMushroomBleb");
+    var p1Obj = Data.GameObjects.ByName("oPlayer_1");
+    var p2Obj = Data.GameObjects.ByName("oPlayer_2");
 
-    foreach (var name in new[] { "lvl_1", "lvl_2", "lvl_3", "lvl_4", "lvl_5" })
+    foreach (var name in new[] { "chapter_1", "lvl_1", "lvl_2", "lvl_3", "lvl_4", "lvl_5",
+                                 "chapter_2", "lvl_6", "lvl_7", "lvl_8",
+                                 "p_2_lvl_1", "p_2_lvl_2", "p_2_lvl_3", "p_2_lvl_4", "p_2_lvl_5" })
     {
         string file = System.IO.Path.Combine(levelsDir, name + ".json");
         if (!System.IO.File.Exists(file))
@@ -88,6 +124,8 @@ if (!string.IsNullOrEmpty(levelsDir))
             else if (objName == "oJumpplatform") def = jumpObj;
             else if (objName == "oDoor") def = doorObj;
             else if (objName == "oPlayer") def = playerObj;
+            else if (objName == "oPlayer_1") def = p1Obj;
+            else if (objName == "oPlayer_2") def = p2Obj;
             else if (objName == "oMushroomBleb") def = enemyObj;
             if (def == null)
                 continue;
@@ -137,7 +175,7 @@ if (!string.IsNullOrEmpty(levelsDir))
                 layer.BackgroundData.Sprite = citySprite;
                 layer.BackgroundData.TiledHorizontally = true;
                 layer.BackgroundData.TiledVertically = false;
-                layer.BackgroundData.Color = 0xB0465566;
+                layer.BackgroundData.Color = 0xFFFFFFFF;
                 layer.HSpeed = 0.55f;
                 layer.VSpeed = 0.0f;
                 bgDepth = System.Math.Max(bgDepth, layer.LayerDepth);

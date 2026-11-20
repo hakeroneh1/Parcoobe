@@ -1,4 +1,4 @@
-// Parcoobe 2.0.3 — Step одиночного игрока (oPlayer, слот игрока 1).
+// Parcoobe 2.0.4 — Step одиночного игрока (oPlayer, слот игрока 1).
 // F11 — полный экран
 if (keyboard_check_pressed(vk_f11))
 {
