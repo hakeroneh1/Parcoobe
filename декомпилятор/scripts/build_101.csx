@@ -3,6 +3,17 @@ using System.Linq;
 using UndertaleModLib;
 using UndertaleModLib.Models;
 
+// 0. Окно: оконный режим 1280x720 с обычными кнопками (свернуть/развернуть/закрыть),
+//    без флага Fullscreen и без Sizeable — иначе Alt-Tab ломает масштаб и вешает игру.
+Data.GeneralInfo.DefaultWindowWidth = 1280;
+Data.GeneralInfo.DefaultWindowHeight = 720;
+var flags = Data.GeneralInfo.Info;
+flags &= ~UndertaleGeneralInfo.InfoFlags.Fullscreen;   // не стартовать в полный экран
+flags &= ~UndertaleGeneralInfo.InfoFlags.Sizeable;     // окно фиксированного размера
+flags |= UndertaleGeneralInfo.InfoFlags.Interpolate;   // пиксели не размываются при масштабе
+Data.GeneralInfo.Info = flags;
+Console.WriteLine("window flags: " + flags + " " + Data.GeneralInfo.DefaultWindowWidth + "x" + Data.GeneralInfo.DefaultWindowHeight);
+
 // 1. Добавляем oName Step и Draw GUI (их в оригинале нет — на них висит меню настроек).
 void AddEvent(string objName, string codeName, int evType, uint evSubtype)
 {

@@ -1,4 +1,4 @@
-// Parcoobe 2.0.5 — отрисовка панели CONTROLS в уровнях (Draw GUI игроков).
+// Parcoobe 2.0.6 — отрисовка панели CONTROLS в уровнях (Draw GUI игроков).
 if (room != Menu)
 {
     draw_set_font(font_pix);
