@@ -1,4 +1,4 @@
-// Parcoobe 2.0.4 — сохранение настроек (вызывается из Step игроков в уровнях).
+// Parcoobe 2.0.5 — сохранение настроек (вызывается из Step игроков в уровнях).
 if (room != Menu)
 {
     // ── сохранение настроек
@@ -14,6 +14,7 @@ if (room != Menu)
         ini_write_real("dev", "p1", global.pco_dev[1]);
         ini_write_real("dev", "p2", global.pco_dev[2]);
         ini_write_real("misc", "sound", global.pco_snd);
+    ini_write_real("misc", "skin", global.pco_skin);
         ini_close();
         global.pco_dirty = 0;
     }

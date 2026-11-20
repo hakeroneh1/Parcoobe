@@ -1,14 +1,24 @@
-// Parcoobe 2.0.4 — отрисовка панели CONTROLS в уровнях (Draw GUI игроков).
+// Parcoobe 2.0.5 — отрисовка панели CONTROLS в уровнях (Draw GUI игроков).
 if (room != Menu)
 {
     draw_set_font(font_pix);
     draw_set_alpha(1);
     if (global.pco_ui == 0)
     {
-        draw_set_colour(make_colour_rgb(150, 150, 150));
+        // кнопка настроек в левом верхнем углу — мышью или F1
+        draw_set_colour(make_colour_rgb(170, 28, 38));
+        draw_rectangle(16, 16, 216, 64, false);
+        draw_set_colour(make_colour_rgb(70, 20, 24));
+        draw_rectangle(16, 16, 216, 64, true);
+        draw_set_colour(c_white);
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        draw_text_transformed(116, 40, "SETTINGS", 1.5, 1.5, 0);
+
+        draw_set_colour(make_colour_rgb(190, 190, 190));
         draw_set_halign(fa_left);
         draw_set_valign(fa_top);
-        draw_text_transformed(20, 692, "F1 CONTROLS", 1.0, 1.0, 0);
+        draw_text_transformed(20, 690, "F1 SETTINGS    K SKIN", 1.0, 1.0, 0);
     }
     if (global.pco_ui == 1)
     {

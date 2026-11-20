@@ -1,8 +1,21 @@
-// Parcoobe 2.0.4 — панель CONTROLS прямо в уровнях (F1 работает везде).
+// Parcoobe 2.0.5 — панель CONTROLS прямо в уровнях (F1 работает везде).
 // Подключается в Step игроков (кроме комнаты Menu, там панелью занимается oName).
 if (room != Menu)
 {
     var pco_rows = 10;   // столько же строк, сколько в меню
+
+    // кнопка SETTINGS мышью (левый верхний угол)
+    if (global.pco_ui == 0 && mouse_check_button_pressed(mb_left))
+    {
+        var pco_cx = device_mouse_x_to_gui(0);
+        var pco_cy = device_mouse_y_to_gui(0);
+        if (pco_cx >= 16 && pco_cx <= 216 && pco_cy >= 16 && pco_cy <= 64)
+        {
+            global.pco_ui = 1;
+            global.pco_bind = -1;
+            global.pco_sel = 0;
+        }
+    }
 
     // F1 открывает и закрывает панель; Esc закрывает
     if (keyboard_check_pressed(vk_f1))
@@ -18,18 +31,26 @@ if (room != Menu)
 
     if (global.pco_ui == 1)
     {
+        // навигация по панели: стрелки/Enter/Esc или крестовина, A и B на геймпаде
+        var pco_gp = global.pco_pad[global.pco_player];
+        var pco_gp_ok = (pco_gp >= 0);
+        var pco_pad_up = pco_gp_ok && (gamepad_button_check_pressed(pco_gp, gp_padu) || gamepad_button_check_pressed(pco_gp, gp_padl));
+        var pco_pad_dn = pco_gp_ok && (gamepad_button_check_pressed(pco_gp, gp_padd) || gamepad_button_check_pressed(pco_gp, gp_padr));
+        var pco_pad_ok = pco_gp_ok && gamepad_button_check_pressed(pco_gp, gp_face1);
+        var pco_pad_back = pco_gp_ok && gamepad_button_check_pressed(pco_gp, gp_face2);
+
         var pco_sel = global.pco_sel;
         if (global.pco_bind < 0)
         {
-            if (keyboard_check_pressed(vk_up))
+            if (keyboard_check_pressed(vk_up) || pco_pad_up)
             {
                 global.pco_sel = (pco_sel + pco_rows - 1) % pco_rows;
             }
-            if (keyboard_check_pressed(vk_down))
+            if (keyboard_check_pressed(vk_down) || pco_pad_dn)
             {
                 global.pco_sel = (pco_sel + 1) % pco_rows;
             }
-            if (keyboard_check_pressed(vk_enter))
+            if (keyboard_check_pressed(vk_enter) || pco_pad_ok)
             {
                 if (pco_sel == 0)
                 {

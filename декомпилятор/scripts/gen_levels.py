@@ -103,7 +103,7 @@ class Level:
 def lvl_1():
     """Обучение на две ширины экрана: ровный пол, ступеньки, яма, пара шипов."""
     L = Level("lvl_1", 80)
-    enemies = [(52, FLOOR_ROW), (68, FLOOR_ROW)]
+    enemies = [(46, FLOOR_ROW), (58, FLOOR_ROW), (72, FLOOR_ROW)]
     L.plat(17, 8, 14)
     L.plat(14, 16, 22)
     L.plat(11, 26, 31)
@@ -111,9 +111,10 @@ def lvl_1():
     L.pit(42, 45)
     L.plat(18, 42, 45)          # мостик над ямой
     L.pad(38)
-    L.spikes(56, 57)
+    L.spikes(52, 54)
     L.pad(62)
     L.plat(16, 64, 70)
+    L.spikes(74, 75)
     return L.to_json(enemies=enemies)
 
 
@@ -185,7 +186,9 @@ def lvl_4():
     L.spikes(60, 63)
     L.pad(68)
     L.plat(15, 66, 71)
-    return L.to_json(enemies=[(18, FLOOR_ROW), (40, FLOOR_ROW), (58, FLOOR_ROW), (74, FLOOR_ROW)])
+    L.spikes(75, 76)
+    return L.to_json(enemies=[(14, FLOOR_ROW), (24, FLOOR_ROW), (36, FLOOR_ROW), (44, FLOOR_ROW),
+                              (58, FLOOR_ROW), (70, FLOOR_ROW), (77, FLOOR_ROW)])
 
 
 def lvl_5():
@@ -262,7 +265,10 @@ def lvl_6():
     L.plat(18, 60, 63)
     L.pad(66)
     L.spikes(70, 73)
-    return L.to_json(enemies=[(18, FLOOR_ROW), (46, FLOOR_ROW), (66, FLOOR_ROW)])
+    L.pad(74)
+    L.spikes(76, 77)
+    return L.to_json(enemies=[(12, FLOOR_ROW), (22, FLOOR_ROW), (36, FLOOR_ROW), (48, FLOOR_ROW),
+                              (62, FLOOR_ROW), (74, FLOOR_ROW), (78, FLOOR_ROW)])
 
 
 def lvl_7():
@@ -287,7 +293,10 @@ def lvl_7():
     L.plat(16, 58, 64)
     L.pad(68)
     L.spikes(72, 75)
-    return L.to_json(enemies=[(12, FLOOR_ROW), (34, FLOOR_ROW), (52, FLOOR_ROW), (70, FLOOR_ROW)])
+    L.pad(66)
+    L.spikes(77, 78)
+    return L.to_json(enemies=[(10, FLOOR_ROW), (24, FLOOR_ROW), (40, FLOOR_ROW), (56, FLOOR_ROW),
+                              (68, FLOOR_ROW), (76, FLOOR_ROW), (79, FLOOR_ROW)])
 
 
 def lvl_8():
@@ -317,7 +326,11 @@ def lvl_8():
     L.plat(14, 76, 82)
     L.pad(84)
     L.spikes(88, 92)
-    return L.to_json(enemies=[(10, FLOOR_ROW), (28, FLOOR_ROW), (44, FLOOR_ROW), (60, FLOOR_ROW), (80, FLOOR_ROW), (95, FLOOR_ROW)])
+    L.pad(86)
+    L.spikes(95, 96)
+    return L.to_json(enemies=[(10, FLOOR_ROW), (20, FLOOR_ROW), (28, FLOOR_ROW), (38, FLOOR_ROW),
+                              (46, FLOOR_ROW), (60, FLOOR_ROW), (66, FLOOR_ROW), (80, FLOOR_ROW),
+                              (94, FLOOR_ROW), (97, FLOOR_ROW)])
 
 
 def p2(name, cols, spikes_at, pits_at, plats, pads):

@@ -63,6 +63,42 @@ if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("LEVELS_DIR")))
     }
 }
 
+// 1c. Фон в меню — свой город (статичный слой)
+{
+    var menu = Data.Rooms.ByName("Menu");
+    var city = Data.Sprites.ByName("dead_city");
+    bool hasBg = false;
+    foreach (var layer in menu.Layers)
+    {
+        if (layer.BackgroundData != null)
+        {
+            layer.BackgroundData.Sprite = city;
+            layer.BackgroundData.TiledHorizontally = false;
+            layer.BackgroundData.TiledVertically = false;
+            layer.BackgroundData.Color = 0xFFFFFFFF;
+            layer.HSpeed = 0.0f;
+            layer.VSpeed = 0.0f;
+            hasBg = true;
+        }
+    }
+    if (!hasBg)
+    {
+        var bd = new UndertaleRoom.Layer.LayerBackgroundData();
+        bd.Sprite = city;
+        bd.Color = 0xFFFFFFFF;
+        menu.Layers.Add(new UndertaleRoom.Layer
+        {
+            LayerName = Data.Strings.MakeString("Background"),
+            LayerId = 900,
+            LayerType = UndertaleRoom.LayerType.Background,
+            LayerDepth = 500,
+            IsVisible = true,
+            Data = bd,
+        });
+    }
+    Console.WriteLine("menu background -> dead_city");
+}
+
 // 2. Полная переделка уровней: lvl_1..lvl_5 собираются с нуля из LEVELS_DIR/*.json
 string levelsDir = Environment.GetEnvironmentVariable("LEVELS_DIR");
 if (!string.IsNullOrEmpty(levelsDir))
@@ -89,8 +125,15 @@ if (!string.IsNullOrEmpty(levelsDir))
         if (room == null) { Console.WriteLine("no room " + name); continue; }
 
         foreach (var layer in room.Layers)
+        {
             if (layer.InstancesData != null)
                 layer.InstancesData.Instances.Clear();
+            if (layer.AssetsData != null)
+            {
+                layer.AssetsData.Sprites.Clear();
+                layer.AssetsData.LegacyTiles.Clear();
+            }
+        }
         room.GameObjects.Clear();
 
         UndertaleRoom.Layer instLayer = null;
@@ -165,7 +208,7 @@ if (!string.IsNullOrEmpty(levelsDir))
         view.SpeedY = -1;
         view.ObjectId = playerObj;
 
-        // фон: город тайлится по горизонтали и едет медленнее комнаты (параллакс)
+        // фон: один статичный слой (картинка на весь экран, не ездит вместе с камерой)
         var citySprite = Data.Sprites.ByName("dead_city");
         int bgDepth = 0;
         foreach (var layer in room.Layers)
@@ -173,36 +216,13 @@ if (!string.IsNullOrEmpty(levelsDir))
             if (layer.BackgroundData != null)
             {
                 layer.BackgroundData.Sprite = citySprite;
-                layer.BackgroundData.TiledHorizontally = true;
+                layer.BackgroundData.TiledHorizontally = false;
                 layer.BackgroundData.TiledVertically = false;
                 layer.BackgroundData.Color = 0xFFFFFFFF;
-                layer.HSpeed = 0.55f;
+                layer.HSpeed = 0.0f;     // 0 = слой стоит на месте при движении камеры
                 layer.VSpeed = 0.0f;
                 bgDepth = System.Math.Max(bgDepth, layer.LayerDepth);
             }
-        }
-
-        // позади города — слой кладки, ещё медленнее: на фоне всегда есть фактура
-        if (!room.Layers.Any(l => l.LayerName.Content == "BGBack"))
-        {
-            var bd = new UndertaleRoom.Layer.LayerBackgroundData();
-            bd.Sprite = Data.Sprites.ByName("bricks_background");
-            bd.TiledHorizontally = true;
-            bd.TiledVertically = false;
-            bd.Stretch = false;
-            bd.Color = 0x60241820;
-            var back = new UndertaleRoom.Layer
-            {
-                LayerName = Data.Strings.MakeString("BGBack"),
-                LayerId = 500,
-                LayerType = UndertaleRoom.LayerType.Background,
-                LayerDepth = bgDepth + 100,
-                IsVisible = true,
-                HSpeed = 0.25f,
-                VSpeed = 0.0f,
-                Data = bd,
-            };
-            room.Layers.Add(back);
         }
 
         room.SetupRoom(false, false);

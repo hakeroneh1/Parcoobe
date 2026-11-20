@@ -26,7 +26,7 @@ EXTRUDE_DARK = (126, 84, 36)
 SHADOW = (8, 8, 8)
 GREEN = (150, 235, 130)
 WORD = "PARCOOBE"
-VERSION_TEXT = "Version 2.0.4"
+VERSION_TEXT = "Version 2.0.5"
 
 # оригинальные положения/ширины букв PARCOOB в sName (чтобы сохранить ритм)
 ORIG_WIDTHS = [185, 207, 186, 184, 187, 187, 185]
@@ -257,7 +257,7 @@ def main():
     page2.save(os.path.join(args.out, "texture2.png"))
 
     # своё ночное небо вместо оригинального dead_city (Texture 1, 2,2 1280x720)
-    sky = art_tiles.night_background()
+    sky = art_tiles.city_background()
     sky.save(os.path.join(args.out, "dead_city.png"))
     page1.paste(sky, (2, 2))
     page1.save(os.path.join(args.out, "texture1.png"))

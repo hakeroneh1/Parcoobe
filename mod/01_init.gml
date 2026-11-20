@@ -1,4 +1,4 @@
-// Parcoobe 2.0.4 — инициализация настроек управления.
+// Parcoobe 2.0.5 — инициализация настроек управления.
 // Этот блок дописывается в Create-события oPlayer / oPlayer_1 / oPlayer_2.
 if (!variable_global_exists("pco_v"))
 {
@@ -87,6 +87,7 @@ if (!variable_global_exists("pco_v"))
         global.pco_dev[1] = ini_read_real("dev", "p1", 0);
         global.pco_dev[2] = ini_read_real("dev", "p2", 0);
         global.pco_snd = ini_read_real("misc", "sound", 1);
+        global.pco_skin = ini_read_real("misc", "skin", 0);
         global.pco_upd_auto = ini_read_real("misc", "update", 1);
         ini_close();
         audio_master_gain(global.pco_snd);
