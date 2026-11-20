@@ -17,6 +17,8 @@
   * `scripts/build_101.csx` — добавление событий `oName` (Step и Draw GUI), удаление старых кнопок меню,
     сдвиг дверей-выходов в кадр;
   * `scripts/build_101.py` — полная сборка: переименование, события, компиляция `mod/*.gml`, текстуры;
+  * `scripts/gen_levels.py` — генерация пяти уровней `lvl_1..lvl_5` с нуля в `уровни/*.json`
+    (сетка 32 px; `build_101.csx` пересобирает по ним комнаты);
   * `scripts/render_room.py` — рендер PNG-превью комнаты из выгруженных данных (Pillow).
 
 ## Сборка
@@ -75,7 +77,9 @@ python3 scripts/rebuild_logo.py --source <выгрузка спрайтов/те
 ```bash
 ./build.sh                                     # собрать UTMT CLI
 python3 scripts/make_art_101.py                # нарисовать логотип и двери
+python3 scripts/gen_levels.py                  # новые уровни lvl_1..lvl_5 (уровни/*.json)
 python3 scripts/build_101.py                   # собрать build/data.win
+python3 ../tools/build_single_exe.py           # один exe: build/Parcoobe-Single.exe
 ```
 
 Скрипт `build_101.py` берёт `original/data.win`, применяет переименование в `Parcoobe`, затем добавляет

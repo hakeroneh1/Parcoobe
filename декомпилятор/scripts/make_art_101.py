@@ -24,7 +24,7 @@ EXTRUDE_DARK = (126, 84, 36)
 SHADOW = (8, 8, 8)
 GREEN = (150, 235, 130)
 WORD = "PARCOOBE"
-VERSION_TEXT = "Version 2.0.1"
+VERSION_TEXT = "Version 2.0.2"
 
 # оригинальные положения/ширины букв PARCOOB в sName (чтобы сохранить ритм)
 ORIG_WIDTHS = [185, 207, 186, 184, 187, 187, 185]
@@ -143,6 +143,30 @@ def _door(closed):
     return img
 
 
+def _seamless_wall():
+    """Кладка 64x64 без чёрной рамки по краям: соседние тайлы стыкуются без швов."""
+    w = h = 64
+    img = Image.new("RGBA", (w, h), (34, 20, 10, 255))
+    d = ImageDraw.Draw(img)
+    bw, bh, gap = 30, 14, 2
+    y = 0
+    row = 0
+    while y < h:
+        offset = 0 if row % 2 == 0 else -(bw + gap) // 2
+        x = offset
+        while x < w:
+            x0 = max(0, x)
+            x1 = min(w, x + bw)
+            if x1 > x0:
+                d.rectangle([x0, y, x1, y + bh], fill=(171, 108, 45, 255))
+                d.line([(x0, y), (x1, y)], fill=(228, 144, 61, 255))
+                d.line([(x0, y + bh), (x1, y + bh)], fill=(113, 71, 30, 255))
+            x += bw + gap
+        y += bh + gap
+        row += 1
+    return img
+
+
 def main():
     ap = argparse.ArgumentParser()
     base = os.path.dirname(os.path.abspath(__file__))
@@ -163,6 +187,10 @@ def main():
 
     page = Image.open(os.path.join(args.source, "textures", "Texture 0.png")).convert("RGBA")
     page.paste(logo.convert("RGBA"), (2, 2))            # sName
+    # бесшовная кладка вместо оригинального sWall (у него чёрная рамка -> швы)
+    wall_tile = _seamless_wall()
+    wall_tile.save(os.path.join(args.out, "sWall.png"))
+    page.paste(wall_tile, (682, 1946))                   # sWall
     page.paste(door, (138, 1942))                        # sDoor
     page.paste(closed, (1682, 1218))                     # sClosedoor
     page.save(os.path.join(args.out, "texture0.png"))

@@ -1,9 +1,45 @@
-// Parcoobe 1.0.1 — меню настроек управления (oName, комната Menu).
+// Parcoobe 2.0.2 — меню настроек управления (oName, комната Menu).
 var pco_rows = 10;
 var pco_bx1 = 1120;
 var pco_by1 = 32;
 var pco_bx2 = 1256;
 var pco_by2 = 84;
+
+// Enter в меню — начать игру (клик мышью тоже работает)
+if (global.pco_ui == 0 && keyboard_check_pressed(vk_enter))
+{
+    room_goto(lvl_1);
+}
+
+// клик по NEW GAME / CHAPTER SELECT — старт игры
+if (mouse_check_button_pressed(mb_left) && global.pco_ui == 0)
+{
+    var pco_cx = device_mouse_x_to_gui(0);
+    var pco_cy = device_mouse_y_to_gui(0);
+    // NEW GAME (спрайт sNewgame 128x128 в точке 992,576)
+    if (pco_cx >= 992 && pco_cx <= 1120 && pco_cy >= 576 && pco_cy <= 704)
+    {
+        room_goto(lvl_1);
+    }
+    // CHAPTER SELECT
+    if (pco_cx >= 160 && pco_cx <= 288 && pco_cy >= 576 && pco_cy <= 704)
+    {
+        room_goto(lvl_1);
+    }
+}
+
+// кнопка SETTINGS мышью
+if (mouse_check_button_pressed(mb_left))
+{
+    var pco_mx = device_mouse_x_to_gui(0);
+    var pco_my = device_mouse_y_to_gui(0);
+    if (pco_mx >= 24 && pco_mx <= 200 && pco_my >= 32 && pco_my <= 84)
+    {
+        global.pco_ui = 1 - global.pco_ui;
+        global.pco_bind = -1;
+        global.pco_sel = 0;
+    }
+}
 
 // F1 — открыть/закрыть
 if (keyboard_check_pressed(vk_f1))

@@ -1,4 +1,10 @@
-// Parcoobe 1.0.1 — Step игрока 1 (двухигровой режим).
+// Parcoobe 2.0.2 — Step игрока 1 (двухигровой режим).
+// F11 — полный экран
+if (keyboard_check_pressed(vk_f11))
+{
+    window_set_fullscreen(!window_get_fullscreen());
+}
+
 var pco_p = 1;
 var pco_b = 0;
 if (global.pco_ui == 1)

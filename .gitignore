@@ -17,3 +17,7 @@ __pycache__/
 
 # rust
 rust3d/target/
+
+# артефакты сборки одного exe (лежат в релизе)
+tools/parcoobe_launcher.exe
+build/Parcoobe-Single.exe

@@ -1,12 +1,22 @@
-// Parcoobe 1.0.1 — отрисовка кнопки MENU и панели настроек (oName, Draw GUI).
+// Parcoobe 2.0.2 — отрисовка кнопки MENU и панели настроек (oName, Draw GUI).
 draw_set_font(font_pix);
 draw_set_alpha(1);
 
-// подсказка
+// кнопка SETTINGS (открывает панель управления)
 if (global.pco_ui == 0)
 {
-    draw_set_colour(make_colour_rgb(150, 150, 150));
-    draw_text_transformed(20, 692, "F1 CONTROLS", 1.0, 1.0, 0);
+    draw_set_colour(make_colour_rgb(170, 28, 38));
+    draw_rectangle(24, 32, 200, 84, false);
+    draw_set_colour(make_colour_rgb(70, 20, 24));
+    draw_rectangle(24, 32, 200, 84, true);
+    draw_set_colour(c_white);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_text_transformed(112, 58, "SETTINGS", 1.7, 1.7, 0);
+    draw_set_colour(make_colour_rgb(200, 200, 200));
+    draw_text_transformed(112, 96, "F1", 1.3, 1.3, 0);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
 }
 
 if (global.pco_ui == 1)

@@ -30,36 +30,82 @@ AddEvent("oName", "gml_Object_oName_Step_0", 3, 0);
 AddEvent("oName", "gml_Object_oName_Draw_64", 8, 64);
 AddEvent("oName", "gml_Object_oName_Other_62", 7, 62);   // Async - HTTP
 
-// 2. Выравниваем позиции тайлов по целым пикселям: дробные координаты
-//    (59.0 / 27.2 и т.п.) давали швы между текстурами стен.
-int snapped = 0;
-foreach (var room in Data.Rooms)
+
+// 2. Полная переделка уровней: lvl_1..lvl_5 собираются с нуля из LEVELS_DIR/*.json
+string levelsDir = Environment.GetEnvironmentVariable("LEVELS_DIR");
+if (!string.IsNullOrEmpty(levelsDir))
 {
-    void Snap(UndertaleRoom.GameObject inst)
+    var doorObj = Data.GameObjects.ByName("oDoor");
+    var wallObj = Data.GameObjects.ByName("oWall");
+    var dangerObj = Data.GameObjects.ByName("oDanger");
+    var jumpObj = Data.GameObjects.ByName("oJumpplatform");
+    var playerObj = Data.GameObjects.ByName("oPlayer");
+    var enemyObj = Data.GameObjects.ByName("oMushroomBleb");
+
+    foreach (var name in new[] { "lvl_1", "lvl_2", "lvl_3", "lvl_4", "lvl_5" })
     {
-        string name = inst.ObjectDefinition?.Name?.Content;
-        if (name == null)
-            return;
-        bool tile = name == "oWall" || name == "oDanger" || name == "oDoor"
-                 || name == "oClosedoor" || name == "oDoorHard" || name == "oDoorlevelselect"
-                 || name == "oDoorSkins" || name == "oDoor2player" || name == "oJumpplatform";
-        if (!tile)
-            return;
-        int nx = (int)System.Math.Round((double)inst.X);
-        int ny = (int)System.Math.Round((double)inst.Y);
-        if (nx != inst.X || ny != inst.Y)
+        string file = System.IO.Path.Combine(levelsDir, name + ".json");
+        if (!System.IO.File.Exists(file))
+            continue;
+        var doc = System.Text.Json.JsonDocument.Parse(System.IO.File.ReadAllText(file));
+        var list = doc.RootElement.GetProperty("instances");
+        var room = Data.Rooms.ByName(name);
+        if (room == null) { Console.WriteLine("no room " + name); continue; }
+
+        foreach (var layer in room.Layers)
+            if (layer.InstancesData != null)
+                layer.InstancesData.Instances.Clear();
+        room.GameObjects.Clear();
+
+        UndertaleRoom.Layer instLayer = null;
+        foreach (var layer in room.Layers)
+            if (layer.InstancesData != null) { instLayer = layer; break; }
+        if (instLayer == null)
         {
-            inst.X = nx;
-            inst.Y = ny;
-            snapped++;
+            instLayer = new UndertaleRoom.Layer
+            {
+                LayerName = Data.Strings.MakeString("Instances"),
+                LayerId = 200,
+                LayerType = UndertaleRoom.LayerType.Instances,
+                LayerDepth = 0,
+                IsVisible = true,
+                Data = new UndertaleRoom.Layer.LayerInstancesData(),
+            };
+            room.Layers.Add(instLayer);
         }
+
+        int count = 0;
+        foreach (var inst in list.EnumerateArray())
+        {
+            string objName = inst[0].GetString();
+            int x = (int)System.Math.Round((double)inst[1].GetSingle());
+            int y = (int)System.Math.Round((double)inst[2].GetSingle());
+            float sx = inst[3].GetSingle();
+            float sy = inst[4].GetSingle();
+            UndertaleGameObject def = null;
+            if (objName == "oWall") def = wallObj;
+            else if (objName == "oDanger") def = dangerObj;
+            else if (objName == "oJumpplatform") def = jumpObj;
+            else if (objName == "oDoor") def = doorObj;
+            else if (objName == "oPlayer") def = playerObj;
+            else if (objName == "oMushroomBleb") def = enemyObj;
+            if (def == null)
+                continue;
+            var go = new UndertaleRoom.GameObject
+            {
+                ObjectDefinition = def,
+                X = x,
+                Y = y,
+                ScaleX = sx,
+                ScaleY = sy,
+                InstanceID = ++Data.GeneralInfo.LastObj,
+                Color = 0xFFFFFFFF,
+            };
+            room.GameObjects.Add(go);
+            instLayer.InstancesData.Instances.Add(go);
+            count++;
+        }
+        room.SetupRoom(false, false);
+        Console.WriteLine("rebuilt " + name + ": " + count + " instances");
     }
-    foreach (var layer in room.Layers)
-        if (layer.InstancesData != null)
-            foreach (var inst in layer.InstancesData.Instances)
-                Snap(inst);
-    if (room.GameObjects != null)
-        foreach (var inst in room.GameObjects)
-            Snap(inst);
 }
-Console.WriteLine("snapped tile positions: " + snapped);

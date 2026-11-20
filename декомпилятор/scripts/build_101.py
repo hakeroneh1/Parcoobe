@@ -81,7 +81,8 @@ def main():
                        os.path.join(SRC, "objects", "oPlayer_2", "Create_0.gml"),
                        os.path.join(MOD, "01_init.gml"))
 
-    print("1/4 события и кнопки меню")
+    print("1/4 события и новые уровни")
+    os.environ["LEVELS_DIR"] = os.path.join(ROOT, "уровни")
     step_a = os.path.join(tmp, "a.win")
     run("load", base, "--scripts",
         os.path.join(ROOT, "декомпилятор", "scripts", "build_101.csx"),
@@ -93,6 +94,7 @@ def main():
         "--code", "gml_Object_oName_Step_0=" + os.path.join(MOD, "05_menu_step.gml"),
         "--code", "gml_Object_oName_Draw_64=" + os.path.join(MOD, "06_menu_draw.gml"),
         "--code", "gml_Object_oName_Other_62=" + os.path.join(MOD, "07_async_http.gml"),
+        "--code", "gml_Object_oPlayer_Collision_6d1efe77_b359_4bce_920b_b0511e55783a=" + os.path.join(MOD, "08_door_chain.gml"),
         "--code", "gml_Object_oPlayer_Create_0=" + create_single,
         "--code", "gml_Object_oPlayer_Step_0=" + os.path.join(MOD, "02_step_single.gml"),
         "--code", "gml_Object_oPlayer_1_Create_0=" + create_p1,
