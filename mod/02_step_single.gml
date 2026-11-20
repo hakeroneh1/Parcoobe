@@ -1,4 +1,4 @@
-// Parcoobe 2.0.6 — Step одиночного игрока (oPlayer, слот игрока 1).
+// Parcoobe 2.0.7 — Step одиночного игрока (oPlayer, слот игрока 1).
 // F11 — полный экран
 if (keyboard_check_pressed(vk_f11))
 {
@@ -17,9 +17,13 @@ var pco_p = 1;
 var pco_b = 0;
 if (global.pco_ui == 1)
 {
+    // панель открыта — игрок стоит на месте
     key_left = 0;
     key_right = 0;
     key_jump = 0;
+    hsp = 0;
+    vsp = 0;
+    grv = 0;
 }
 else if (global.pco_dev[pco_p] == 1)
 {
@@ -34,6 +38,11 @@ else
     key_left = keyboard_check(global.pco_kb[pco_b]);
     key_right = keyboard_check(global.pco_kb[pco_b + 1]);
     key_jump = keyboard_check_pressed(global.pco_kb[pco_b + 2]) || keyboard_check_pressed(global.pco_kb[pco_b + 3]);
+}
+
+if (global.pco_ui == 0)
+{
+    grv = 0.3;
 }
 
 var move = key_right - key_left;
